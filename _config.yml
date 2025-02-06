@@ -1,6 +1,6 @@
 title: This is the title of the site
 description: This is the description of the site
-show_downloads: "false"
+show_downloads: "true"
 linkedin: "https://www.linkedin.com/in/chrisblocher"
 remote_theme: pages-themes/modernist@v0.2.0
 plugins:
