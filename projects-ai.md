@@ -1,3 +1,5 @@
+| [Home](index.md) | [About](about.md) | [Projects](projects.md)
+
 # AI-related projects
 
 ## NotebookLM
