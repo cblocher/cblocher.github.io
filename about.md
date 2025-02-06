@@ -1,4 +1,4 @@
-| [Home] (index.md) | [About] (about.md) |
+| [Home](index.md) | About |
 
 # About me
 
