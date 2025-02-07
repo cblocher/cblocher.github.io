@@ -1,4 +1,4 @@
-| [Home](index.md) | [About](about.md) | [Projects](projects.md)
+{% include nav.md %}
 
 # AI-related projects
 

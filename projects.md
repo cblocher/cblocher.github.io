@@ -1,4 +1,4 @@
-| [Home](index.md) | [About](about.md) | Projects
+{% include nav.md %}
 
 # Projects
 

@@ -1,1 +1,1 @@
- [Home](index.md) / [About](about.md) / [Projects](projects.md)
+ [Home](index.html) / [About](about.html) / [Projects](projects.html)
