@@ -1,5 +1,7 @@
 | [Home](index.md) | About | [Projects](projects.md)
 
+{% include nav.md %}
+
 # About me
 
 Let's learn a little more about this guy.
