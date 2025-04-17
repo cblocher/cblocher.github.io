@@ -10,8 +10,9 @@ This video demonstration was recorded during a session with CareerSherpa.net.
 
 ## Headline Hero game
 
-Based on an idea from Jeff Su, I used Google Gemini to turn the "Headings and links" section of a style guide into a learning game to teach the team our guideliens for creating 
-effective headings and URLs in our content.
+Based on an idea from Jeff Su and [Guidelines for Creating Effective Headings and URLs for End-User Documentation](https://firehead.net/free-resource/guidelines-for-creating-effective-headings-and-urls-for-end-user-documentation/) (a free PDF resource from Firehead), I used Google Gemini to turn it into a learning game to teach the team guidelines for creating 
+effective headings and URLs. It all took less than 30 minutes to do.
+
 <iframe src="https://gemini.google.com/share/4876b92999ed" width="600" height="400" frameborder="0" allowfullscreen>
   Your browser does not support iframes.
 </iframe>
