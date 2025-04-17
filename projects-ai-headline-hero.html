@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headline Hero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* Apply the game font */
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #1a1a2e; /* Dark blue background */
+            color: #e0e0e0; /* Light grey text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        /* Style game container */
+        #game-container {
+            background-color: #162447; /* Slightly lighter blue */
+            border: 4px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        /* Style headings */
+        h1, h2 {
+            color: #fca311; /* Orange accent */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px #000;
+        }
+        /* Style buttons */
+        button {
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(145deg, #1f4068, #162447); /* Blue gradient */
+            color: #e0e0e0;
+            border: 2px solid #e0e0e0;
+            padding: 15px 25px;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+            display: block; /* Make buttons stack vertically */
+            width: 100%; /* Make buttons take full width */
+            max-width: 400px; /* Limit button width */
+            margin-left: auto; /* Center buttons */
+            margin-right: auto; /* Center buttons */
+            line-height: 1.5; /* Improve readability on buttons */
+            font-size: 0.9em; /* Adjust font size for potentially longer options */
+        }
+        /* Style button hover effect */
+        button:hover {
+            background: linear-gradient(145deg, #e0e0e0, #fca311); /* Orange/White gradient */
+            color: #162447; /* Dark blue text */
+            transform: translateY(-2px);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+        /* Style button active effect */
+        button:active {
+            transform: translateY(1px);
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        /* Style challenge text */
+        #challenge-text {
+            background-color: #1b1b2f; /* Darker background for contrast */
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px dashed #fca311;
+            font-size: 0.9em; /* Slightly smaller font for challenge */
+            line-height: 1.6;
+            text-align: left; /* Align challenge text left for readability */
+        }
+        /* Style feedback message box */
+        #feedback-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(22, 36, 71, 0.95); /* Semi-transparent dark blue */
+            color: #e0e0e0;
+            padding: 30px;
+            border-radius: 10px;
+            border: 3px solid #fca311;
+            box-shadow: 0 0 20px rgba(252, 163, 17, 0.5);
+            z-index: 100;
+            display: none; /* Hidden by default */
+            max-width: 90%;
+            width: 500px;
+            text-align: center;
+        }
+        /* Style feedback text */
+        #feedback-text {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+        /* Style close button for feedback box */
+        #feedback-close-button {
+             background: #fca311; /* Orange */
+             color: #162447; /* Dark blue */
+             padding: 10px 20px;
+             border: none;
+             border-radius: 5px;
+             cursor: pointer;
+             font-size: 1em;
+             margin-top: 10px;
+        }
+         /* Style close button hover effect */
+        #feedback-close-button:hover {
+             background: #e0e0e0; /* Light grey */
+        }
+        /* Style score and level display */
+        #score-level-display {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #fca311;
+        }
+        /* Style achievement list */
+        #achievements-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+        /* Style achievement items */
+        #achievements-list li {
+            margin: 5px 0;
+            color: #90ee90; /* Light green for achievements */
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1 id="game-title">Headline Hero</h1>
+
+        <div id="start-screen">
+            <h2 id="start-title">Become a Headline Hero!</h2>
+            <p id="start-story" class="mb-4 leading-relaxed">Welcome, aspiring Technical Writer! Your mission, should you choose to accept it, is to master the art of crafting clear, concise, and effective headings and URLs. Navigate the challenges, learn the rules, and become a true Headline Hero!</p>
+            <button id="start-button">Start Mission!</button>
+        </div>
+
+        <div id="game-area" class="hidden">
+            <h2 id="level-title">Level Title</h2>
+            <p id="level-story" class="mb-4 leading-relaxed">Level introduction story...</p>
+            <p class="mb-2">Choose the BEST option:</p>
+            <div id="challenge-text" class="mb-4">Challenge text goes here...</div>
+            <div id="options-area">
+                </div>
+            <div id="score-level-display">
+                <span>Score: <span id="score">0</span></span> |
+                <span>Level: <span id="level-number">1</span> / <span id="total-levels">5</span></span>
+            </div>
+        </div>
+
+        <div id="end-screen" class="hidden">
+            <h2 id="end-title">Mission Complete!</h2>
+            <p id="end-message" class="mb-4 leading-relaxed">Congratulations!</p>
+            <p>Final Score: <span id="final-score">0</span></p>
+            <div id="achievements" class="mt-4">
+                <h3>Achievements Unlocked:</h3>
+                <ul id="achievements-list">
+                    </ul>
+            </div>
+            <button id="restart-button">Play Again?</button>
+        </div>
+    </div>
+
+    <div id="feedback-box">
+        <p id="feedback-text">Feedback message goes here.</p>
+        <button id="feedback-close-button">OK</button>
+    </div>
+
+    <script>
+        // --- Game Data ---
+        // Expanded to 6 questions per level for maximum replayability.
+        const gameQuestions = {
+            // Level 1: Conciseness & Clarity (6 Questions)
+            1: [
+                {
+                    level: 1, title: "Level 1: Conciseness & Clarity", story: "Your first task is to cut the clutter! Good headings and URLs get straight to the point. Avoid unnecessary words.",
+                    challengeType: "Heading", challenge: "Original Heading: 'A Comprehensive Overview of the Necessary Steps and Detailed Procedures for Potentially Updating Various Kinds of Applications or Software Residing on Your Computing Device'",
+                    options: ["How to Update Software", "Updating Things on Your Computer Machine", "Software Update Steps and Procedures Guide", "Device Application Update Information Overview"], correctAnswer: 0,
+                    explanation: "Correct! 'How to Update Software' is concise (4 words) and clearly states the topic, following the 6-8 word guideline.", achievement: "Clarity Champion"
+                },
+                {
+                    level: 1, title: "Level 1: Conciseness & Clarity", story: "Brevity is key! Make URLs short and descriptive, ideally under 60 characters.",
+                    challengeType: "URL", challenge: "Original URL: '/information-regarding-the-process-for-setting-up-your-new-electronic-mail-account-configuration'",
+                    options: ["/email-setup-guide", "/setting-up-new-email-account", "/email-account-configuration-details", "/new-email-setup-process-info"], correctAnswer: 1,
+                    explanation: "Correct! '/setting-up-new-email-account' is short, descriptive, and uses clear keywords.", achievement: "Clarity Champion"
+                },
+                 {
+                    level: 1, title: "Level 1: Conciseness & Clarity", story: "Focus on the core message. Remove redundant words from headings.",
+                    challengeType: "Heading", challenge: "Original Heading: 'A Guide Containing Instructions Pertaining to the Installation of Necessary Printer Drivers'",
+                    options: ["Guide to Printer Driver Installation Steps", "Installing Printer Drivers", "How You Can Install Your Printer Drivers", "Printer Driver Installation Manual Guide"], correctAnswer: 1,
+                    explanation: "Correct! 'Installing Printer Drivers' is direct, clear, and avoids redundant words like 'guide containing instructions'.", achievement: "Clarity Champion"
+                },
+                {
+                    level: 1, title: "Level 1: Conciseness & Clarity", story: "Get straight to the point in headings. Avoid wordy introductions.",
+                    challengeType: "Heading", challenge: "Original Heading: 'An Explanation Concerning the Method for Clearing Your Browser's Cache Memory Files'",
+                    options: ["Browser Cache Clearing Explanation", "Method for Clearing Browser Cache", "Clearing Browser Cache", "How To Clear Out Your Browser Cache Files"], correctAnswer: 2,
+                    explanation: "Correct! 'Clearing Browser Cache' is the most direct and concise option.", achievement: "Clarity Champion"
+                },
+                {
+                    level: 1, title: "Level 1: Conciseness & Clarity", story: "Shorten URLs while keeping them understandable.",
+                    challengeType: "URL", challenge: "Original URL: '/step-by-step-instructions-for-how-you-can-easily-create-a-new-user-profile-account'",
+                    options: ["/creating-user-profiles-guide", "/new-user-profile-creation-steps", "/user-profile-setup-instructions", "/create-user-profile"], correctAnswer: 3,
+                    explanation: "Correct! '/create-user-profile' is short, clear, and directly reflects the action.", achievement: "Clarity Champion"
+                },
+                {
+                    level: 1, title: "Level 1: Conciseness & Clarity", story: "Simplify headings by removing unnecessary adjectives or adverbs.",
+                    challengeType: "Heading", challenge: "Original Heading: 'Important Information Regarding the Topic of Adjusting Various Screen Brightness Parameters on Your Device'",
+                    options: ["Adjusting Screen Brightness", "Screen Brightness Parameter Adjustments", "How to Adjust Your Screen's Brightness Level", "Device Screen Brightness Information"], correctAnswer: 0,
+                    explanation: "Correct! 'Adjusting Screen Brightness' is concise and clearly states the main topic without extra fluff.", achievement: "Clarity Champion"
+                }
+            ],
+            // Level 2: Relevant Keywords (6 Questions)
+            2: [
+                {
+                    level: 2, title: "Level 2: Relevant Keywords", story: "Users (and search engines!) need keywords to find information. Make sure your headings and URLs include relevant terms.",
+                    challengeType: "URL", challenge: "Content Topic: A guide on using the new smartphone calendar app.",
+                    options: ["/new-gadget-time-features", "/using-calendar-app-smartphone", "/manage-your-day-better", "/phone-app-guide-details"], correctAnswer: 1,
+                    explanation: "Excellent! '/using-calendar-app-smartphone' includes the core keywords ('calendar', 'app', 'smartphone') making it relevant and SEO-friendly.", achievement: "Keyword King"
+                },
+                 {
+                    level: 2, title: "Level 2: Relevant Keywords", story: "Headings should reflect the main topic using natural keywords.",
+                    challengeType: "Heading", challenge: "Content Topic: Troubleshooting Bluetooth pairing problems.",
+                    options: ["Device Connection Help", "Fixing Wireless Connections", "Troubleshooting Bluetooth Pairing", "Making Gadgets Talk"], correctAnswer: 2,
+                    explanation: "Excellent! 'Troubleshooting Bluetooth Pairing' clearly states the topic using relevant keywords.", achievement: "Keyword King"
+                },
+                {
+                    level: 2, title: "Level 2: Relevant Keywords", story: "URLs benefit from keywords that match the content's focus.",
+                    challengeType: "URL", challenge: "Content Topic: Exporting data from a spreadsheet application.",
+                    options: ["/saving-your-work-file", "/spreadsheet-data-output", "/getting-info-out-of-tables", "/export-spreadsheet-data"], correctAnswer: 3,
+                    explanation: "Excellent! '/export-spreadsheet-data' uses specific keywords ('export', 'spreadsheet', 'data') directly related to the content.", achievement: "Keyword King"
+                },
+                {
+                    level: 2, title: "Level 2: Relevant Keywords", story: "Choose headings with keywords users would actually search for.",
+                    challengeType: "Heading", challenge: "Content Topic: Setting up parental controls on a computer.",
+                    options: ["Keeping Kids Safe Online Guide", "Computer Safety Settings for Children", "Setting Up Parental Controls", "Restricting Access for Young Users"], correctAnswer: 2,
+                    explanation: "Excellent! 'Setting Up Parental Controls' uses the specific, commonly searched keywords for this topic.", achievement: "Keyword King"
+                },
+                {
+                    level: 2, title: "Level 2: Relevant Keywords", story: "Include specific technical keywords in URLs when appropriate.",
+                    challengeType: "URL", challenge: "Content Topic: Updating graphics card drivers for better performance.",
+                    options: ["/improving-visuals-on-your-pc", "/update-graphics-drivers", "/making-games-look-better", "/gpu-driver-installation"], correctAnswer: 1,
+                    explanation: "Excellent! '/update-graphics-drivers' includes the specific technical keywords 'graphics drivers'. '/gpu-driver-installation' is also good, but 'update' might be more common.", achievement: "Keyword King"
+                },
+                 {
+                    level: 2, title: "Level 2: Relevant Keywords", story: "Use keywords that accurately describe the feature or function.",
+                    challengeType: "Heading", challenge: "Content Topic: Learning common keyboard shortcuts for productivity.",
+                    options: ["Faster Computer Usage Tips", "Keyboard Tricks for Experts", "Using Keyboard Shortcuts", "Speeding Up Workflow with Keys"], correctAnswer: 2,
+                    explanation: "Excellent! 'Using Keyboard Shortcuts' clearly identifies the topic with the most relevant keywords.", achievement: "Keyword King"
+                }
+            ],
+            // Level 3: Readability Rules (6 Questions)
+            3: [
+                 {
+                    level: 3, title: "Level 3: Readability Rules", story: "Keep it simple! Avoid jargon. For URLs, use hyphens (-) not underscores (_) or special characters.",
+                    challengeType: "URL", challenge: "Content Topic: Connecting a printer to a Wi-Fi network.",
+                    options: ["/configure_printer_wifi@setup!", "/printerWiFiSetupGuide", "/connect-printer-wifi", "/wireless%20printer%20connection"], correctAnswer: 2,
+                    explanation: "Perfect! '/connect-printer-wifi' uses simple words separated by hyphens, making it easy to read and understand.", achievement: "Readability Ruler"
+                },
+                {
+                    level: 3, title: "Level 3: Readability Rules", story: "Aim for clarity. Replace complex jargon with simpler terms in headings.",
+                    challengeType: "Heading", challenge: "Original Heading: 'Ameliorating Network Latency via Protocol Optimization'",
+                    options: ["Network Speed Improvement Techniques", "Fixing Slow Network Connections", "Optimizing Network Protocols for Latency", "Improving Network Speed"], correctAnswer: 3,
+                    explanation: "Perfect! 'Improving Network Speed' uses simple, everyday language instead of jargon like 'ameliorating' and 'latency'.", achievement: "Readability Ruler"
+                },
+                {
+                    level: 3, title: "Level 3: Readability Rules", story: "Use hyphens in URLs for separation, avoiding special characters or underscores.",
+                    challengeType: "URL", challenge: "Content Topic: Contact information for customer support.",
+                    options: ["/customer_support_contact&info", "/support-contact-details", "/customer-support-contact", "/ContactInfoForSupportTeam"], correctAnswer: 2,
+                    explanation: "Perfect! '/customer-support-contact' uses hyphens correctly and avoids underscores or special characters.", achievement: "Readability Ruler"
+                },
+                {
+                    level: 3, title: "Level 3: Readability Rules", story: "Translate technical concepts into plain language for headings.",
+                    challengeType: "Heading", challenge: "Original Heading: 'Facilitating Data Synchronization Across Multiple Computing Platforms'",
+                    options: ["Cross-Platform Data Sync Methods", "Syncing Data Between Devices", "Multi-Platform Synchronization Guide", "How To Synchronize Your Data"], correctAnswer: 1,
+                    explanation: "Perfect! 'Syncing Data Between Devices' is much more readable and less jargon-filled than the original.", achievement: "Readability Ruler"
+                },
+                 {
+                    level: 3, title: "Level 3: Readability Rules", story: "Avoid complex characters, underscores, and mixed case in URLs.",
+                    challengeType: "URL", challenge: "Content Topic: How to use the advanced search feature.",
+                    options: ["/howToUse_the_advancedSearch-feature(new)", "/using-advanced-search", "/AdvancedSearch_Usage_Guide", "/learnAdvancedSearchFunctionality"], correctAnswer: 1,
+                    explanation: "Perfect! '/using-advanced-search' uses lowercase letters and hyphens only, making it the most readable and web-friendly option.", achievement: "Readability Ruler"
+                },
+                {
+                    level: 3, title: "Level 3: Readability Rules", story: "Simplify technical terms in headings for broader understanding.",
+                    challengeType: "Heading", challenge: "Original Heading: 'Understanding File System Permissions and Access Control Lists (ACLs)'",
+                    options: ["File System Permission Settings", "Guide to ACLs and Permissions", "Understanding File Permissions", "Controlling Access to Files"], correctAnswer: 2,
+                    explanation: "Perfect! 'Understanding File Permissions' simplifies the technical terms while still being accurate and understandable.", achievement: "Readability Ruler"
+                }
+            ],
+             // Level 4: No Clickbait! (6 Questions)
+            4: [
+                {
+                    level: 4, title: "Level 4: No Clickbait!", story: "Honesty is the best policy. Headings should accurately reflect the content, not lure readers with false promises.",
+                    challengeType: "Heading", challenge: "Content Topic: Basic explanation of how cloud storage works.",
+                    options: ["Cloud Storage Explained Simply", "The #1 Secret About Cloud Storage They Hid!", "You WON'T BELIEVE How Cloud Storage Works!", "Unlock UNLIMITED Cloud Power NOW!"], correctAnswer: 0,
+                    explanation: "Well done! 'Cloud Storage Explained Simply' accurately describes the content without resorting to sensationalism.", achievement: "Truth Teller"
+                },
+                {
+                    level: 4, title: "Level 4: No Clickbait!", story: "Avoid exaggeration. URLs should be descriptive, not sensational.",
+                    challengeType: "URL", challenge: "Content Topic: Understanding online account security settings.",
+                    options: ["/mind-blowing-security-secrets-revealed", "/account-security-settings-guide", "/understanding-security-settings", "/stop-hackers-now-secrets"], correctAnswer: 2,
+                    explanation: "Well done! '/understanding-security-settings' is a straightforward and honest description of the content.", achievement: "Truth Teller"
+                },
+                {
+                    level: 4, title: "Level 4: No Clickbait!", story: "Deliver what you promise. Headings shouldn't overhype simple tips.",
+                    challengeType: "Heading", challenge: "Content Topic: Tips for extending smartphone battery life.",
+                    options: ["This ONE Trick Will Double Your Battery Life!", "Smartphone Battery Life Secrets UNLEASHED!", "Tips to Extend Battery Life", "Never Charge Your Phone Again With This Hack!"], correctAnswer: 2,
+                    explanation: "Well done! 'Tips to Extend Battery Life' accurately reflects the content without making unbelievable claims.", achievement: "Truth Teller"
+                },
+                {
+                    level: 4, title: "Level 4: No Clickbait!", story: "Headings should be informative, not create false urgency or mystery.",
+                    challengeType: "Heading", challenge: "Content Topic: Basic file management tips (copy, paste, delete).",
+                    options: ["The File Management Secret NO ONE Is Talking About!", "Basic File Management Tips", "Your Files Are At Risk! Learn This NOW!", "Unlock Pro File Skills Instantly!"], correctAnswer: 1,
+                    explanation: "Well done! 'Basic File Management Tips' is informative and accurately represents the likely content.", achievement: "Truth Teller"
+                },
+                {
+                    level: 4, title: "Level 4: No Clickbait!", story: "URLs should reflect the content, not use fear or expose-style language.",
+                    challengeType: "URL", challenge: "Content Topic: How to review your online privacy settings.",
+                    options: ["/the-truth-about-your-privacy-settings-exposed", "/stop-companies-spying-on-you", "/reviewing-privacy-settings", "/privacy-secrets-they-dont-want-you-to-know"], correctAnswer: 2,
+                    explanation: "Well done! '/reviewing-privacy-settings' is a neutral, accurate description of the page content.", achievement: "Truth Teller"
+                },
+                {
+                    level: 4, title: "Level 4: No Clickbait!", story: "Avoid overly aggressive or destructive language in headings for simple tasks.",
+                    challengeType: "Heading", challenge: "Content Topic: How to uninstall software from your computer.",
+                    options: ["Completely OBLITERATE Unwanted Software FOREVER!", "Uninstalling Software Properly", "The Only Way To TRULY Remove Programs!", "Nuke Unwanted Apps From Your PC!"], correctAnswer: 1,
+                    explanation: "Well done! 'Uninstalling Software Properly' is a calm, accurate heading for the task, avoiding clickbait hyperbole.", achievement: "Truth Teller"
+                }
+            ],
+            // Level 5: Optimize for SEO & Users (6 Questions)
+            5: [
+                 {
+                    level: 5, title: "Level 5: Optimize for SEO & Users", story: "Balance keywords for search engines with natural language for users. Avoid stuffing keywords unnaturally.",
+                    challengeType: "Heading", challenge: "Content Topic: How to fix common Wi-Fi connection problems.",
+                    options: ["Wi-Fi Fixes Connection Problems Troubleshooting Help", "Fixing Your Wi-Fi: Connection Solutions Guide", "Troubleshooting Wi-Fi Connection Issues", "Wi-Fi Connection Troubleshooting Fix Problems Solutions"], correctAnswer: 2,
+                    explanation: "Great job! 'Troubleshooting Wi-Fi Connection Issues' uses relevant keywords naturally and clearly indicates the topic for the user.", achievement: "SEO Savvy"
+                },
+                {
+                    level: 5, title: "Level 5: Optimize for SEO & Users", story: "URLs should be user-friendly and avoid keyword stuffing.",
+                    challengeType: "URL", challenge: "Content Topic: Page for logging into a user account.",
+                    options: ["/login-signin-access-account-enter-site", "/user-account-login-page", "/account-login", "/secure-user-portal-entry-login"], correctAnswer: 2,
+                    explanation: "Great job! '/account-login' is concise, uses relevant keywords naturally, and matches user search intent.", achievement: "SEO Savvy"
+                },
+                 {
+                    level: 5, title: "Level 5: Optimize for SEO & Users", story: "Headings should be natural and helpful, not just a list of keywords.",
+                    challengeType: "Heading", challenge: "Content Topic: Instructions on how to take photos with a smartphone camera.",
+                    options: ["Camera Photo Picture Taking Guide Instructions", "Smartphone Camera Photography Pictures Guide", "How to Use Your Smartphone Camera", "Taking Photos Pictures with Phone Camera App"], correctAnswer: 2,
+                    explanation: "Great job! 'How to Use Your Smartphone Camera' is natural, user-focused, and includes relevant keywords without stuffing.", achievement: "SEO Savvy"
+                },
+                {
+                    level: 5, title: "Level 5: Optimize for SEO & Users", story: "Avoid generic keyword lists in headings; focus on user tasks.",
+                    challengeType: "Heading", challenge: "Content Topic: Where to find and download free software.",
+                    options: ["Download Get Free Software Apps Programs Installer", "Free Software Download Links", "Downloading Free Software", "Software Apps Programs Freeware Downloads"], correctAnswer: 2,
+                    explanation: "Great job! 'Downloading Free Software' clearly states the user's goal using natural language and relevant keywords.", achievement: "SEO Savvy"
+                },
+                {
+                    level: 5, title: "Level 5: Optimize for SEO & Users", story: "Make URLs concise and relevant to the user's goal, avoiding excessive synonyms.",
+                    challengeType: "URL", challenge: "Content Topic: Page with contact details for customer support.",
+                    options: ["/help-support-assistance-customer-service-contact-us", "/contact-support", "/get-help-customer-support", "/customer-service-contact-information-page"], correctAnswer: 1,
+                    explanation: "Great job! '/contact-support' is short, clear, and directly addresses the user's need without keyword stuffing.", achievement: "SEO Savvy"
+                },
+                 {
+                    level: 5, title: "Level 5: Optimize for SEO & Users", story: "Structure headings around actions or questions users have.",
+                    challengeType: "Heading", challenge: "Content Topic: Methods for backing up computer data.",
+                    options: ["Backup Save Data Files Information Storage Cloud Local", "Data Backup Methods Explained", "How to Back Up Your Data", "Computer Data File Backup Storage Solutions"], correctAnswer: 2,
+                    explanation: "Great job! 'How to Back Up Your Data' is phrased as a user question, making it helpful and includes key terms naturally.", achievement: "SEO Savvy"
+                }
+            ]
+        };
+
+        // --- Game State ---
+        let currentLevelIndex = 0; // Tracks the level number (0-indexed)
+        let score = 0;
+        let achievementsUnlocked = [];
+        let currentQuestion = null; // Holds the randomly selected question for the current level
+
+        // --- DOM Elements ---
+        const startScreen = document.getElementById('start-screen');
+        const gameArea = document.getElementById('game-area');
+        const endScreen = document.getElementById('end-screen');
+        const startButton = document.getElementById('start-button');
+        const restartButton = document.getElementById('restart-button');
+
+        const levelTitle = document.getElementById('level-title');
+        const levelStory = document.getElementById('level-story');
+        const challengeText = document.getElementById('challenge-text');
+        const optionsArea = document.getElementById('options-area');
+        const scoreDisplay = document.getElementById('score');
+        const levelNumberDisplay = document.getElementById('level-number');
+        const totalLevelsDisplay = document.getElementById('total-levels');
+
+        const finalScoreDisplay = document.getElementById('final-score');
+        const endMessage = document.getElementById('end-message');
+        const achievementsList = document.getElementById('achievements-list');
+
+        const feedbackBox = document.getElementById('feedback-box');
+        const feedbackText = document.getElementById('feedback-text');
+        // NOTE: We get the feedbackCloseButton inside the showFeedback function
+
+        // --- Game Logic Functions ---
+
+        /**
+         * Initializes or resets the game state and displays the first level.
+         */
+        function startGame() {
+            currentLevelIndex = 0;
+            score = 0;
+            achievementsUnlocked = [];
+            currentQuestion = null; // Reset current question
+            startScreen.classList.add('hidden');
+            endScreen.classList.add('hidden');
+            gameArea.classList.remove('hidden');
+            updateScoreDisplay();
+            loadLevel(currentLevelIndex);
+        }
+
+        /**
+         * Loads and displays the content for the specified level index.
+         * Randomly selects a question for the level.
+         * @param {number} levelIndex - The index of the level to load (0-based).
+         */
+        function loadLevel(levelIndex) {
+            const numberOfLevels = Object.keys(gameQuestions).length;
+            if (levelIndex >= numberOfLevels) {
+                endGame();
+                return;
+            }
+
+            const levelNum = levelIndex + 1; // 1-based level number
+            const questionsForLevel = gameQuestions[levelNum];
+
+            // Randomly select a question for this level
+            const randomIndex = Math.floor(Math.random() * questionsForLevel.length);
+            currentQuestion = questionsForLevel[randomIndex]; // Store the selected question
+
+            // Update UI with selected question details
+            levelTitle.textContent = currentQuestion.title;
+            levelStory.textContent = currentQuestion.story;
+            challengeText.innerHTML = `<strong>${currentQuestion.challengeType} Challenge:</strong><br>${currentQuestion.challenge}`; // Use innerHTML for bold tag
+            levelNumberDisplay.textContent = levelNum;
+            totalLevelsDisplay.textContent = numberOfLevels;
+
+            optionsArea.innerHTML = ''; // Clear previous options
+            currentQuestion.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.textContent = option;
+                button.dataset.index = index; // Store the option index
+                button.addEventListener('click', handleAnswer);
+                optionsArea.appendChild(button);
+            });
+        }
+
+        /**
+         * Handles the user's answer selection using the currently loaded question.
+         * @param {Event} event - The click event from the option button.
+         */
+        function handleAnswer(event) {
+            // Ensure a question is loaded
+            if (!currentQuestion) return;
+
+            const selectedIndex = parseInt(event.target.dataset.index);
+
+            if (selectedIndex === currentQuestion.correctAnswer) {
+                score += 10; // Award points
+                // Add achievement only if not already unlocked in this playthrough
+                if (!achievementsUnlocked.includes(currentQuestion.achievement)) {
+                     achievementsUnlocked.push(currentQuestion.achievement);
+                }
+                showFeedback(true, currentQuestion.explanation);
+                updateScoreDisplay();
+                // Next level is loaded when feedback is closed (in showFeedback)
+            } else {
+                // Show incorrect feedback
+                showFeedback(false, `Not quite! The best choice focuses on ${getPrincipleHint(currentQuestion.level)}. Try again or review the principle.`);
+                // Optional: Add a penalty
+                // score -= 2;
+                // updateScoreDisplay();
+            }
+        }
+
+        /**
+         * Provides a hint based on the current level's principle number.
+         * @param {number} levelNum - The current level number (1-based).
+         * @returns {string} A hint string.
+         */
+        function getPrincipleHint(levelNum) {
+             switch(levelNum) {
+                case 1: return "conciseness and clarity";
+                case 2: return "using relevant keywords";
+                case 3: return "readability and proper URL formatting";
+                case 4: return "honesty and avoiding clickbait";
+                case 5: return "balancing SEO with user readability";
+                default: return "the core principle of the level";
+             }
+        }
+
+
+        /**
+         * Updates the score display on the screen.
+         */
+        function updateScoreDisplay() {
+            scoreDisplay.textContent = score;
+        }
+
+        /**
+         * Displays the feedback message box.
+         * @param {boolean} isCorrect - Whether the answer was correct.
+         * @param {string} message - The feedback message to display.
+         */
+        function showFeedback(isCorrect, message) {
+            // Get the button element *inside* the function each time it's called
+            const feedbackCloseButton = document.getElementById('feedback-close-button');
+
+            feedbackText.textContent = message;
+            feedbackBox.style.borderColor = isCorrect ? '#90ee90' : '#ff6b6b'; // Green/Red border
+            feedbackBox.style.boxShadow = `0 0 20px ${isCorrect ? 'rgba(144, 238, 144, 0.5)' : 'rgba(255, 107, 107, 0.5)'}`;
+            feedbackBox.style.display = 'block';
+
+            // Assign onclick handler - this replaces any previous handler on the button
+            feedbackCloseButton.onclick = () => {
+                feedbackBox.style.display = 'none'; // Hide the feedback box
+                if (isCorrect) {
+                    // If the answer was correct, proceed to the next level index
+                    currentLevelIndex++;
+                    loadLevel(currentLevelIndex);
+                }
+                // If incorrect, clicking OK just closes the dialog, user stays on the same level
+            };
+        }
+
+
+        /**
+         * Ends the game and displays the final score and achievements.
+         */
+        function endGame() {
+            const numberOfLevels = Object.keys(gameQuestions).length;
+            gameArea.classList.add('hidden');
+            endScreen.classList.remove('hidden');
+            finalScoreDisplay.textContent = score;
+
+            // Calculate max possible score based on number of levels
+            const maxScore = numberOfLevels * 10;
+            let message = "Mission Complete, Headline Hero!";
+            if (score >= maxScore * 0.8) { // 80% or more
+                 message += " Outstanding work! You've truly mastered the art!";
+            } else if (score >= maxScore * 0.5) { // 50% or more
+                 message += " Great job! You're well on your way to becoming a documentation expert.";
+            } else {
+                 message += " Good effort! Keep practicing to hone your skills.";
+            }
+             endMessage.textContent = message;
+
+
+            achievementsList.innerHTML = ''; // Clear previous list
+            if (achievementsUnlocked.length > 0) {
+                // Use a Set to ensure unique achievements are displayed
+                const uniqueAchievements = [...new Set(achievementsUnlocked)];
+                uniqueAchievements.forEach(ach => {
+                    const li = document.createElement('li');
+                    li.textContent = `🏆 ${ach}`; // Add trophy emoji
+                    achievementsList.appendChild(li);
+                });
+            } else {
+                 const li = document.createElement('li');
+                 li.textContent = "No achievements unlocked this time. Try again!";
+                 achievementsList.appendChild(li);
+            }
+        }
+
+        // --- Event Listeners ---
+        startButton.addEventListener('click', startGame);
+        restartButton.addEventListener('click', startGame); // Restart game uses the same function
+
+    </script>
+</body>
+</html>
