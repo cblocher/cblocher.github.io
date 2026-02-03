@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Quest: 8-Bit Rewrite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+            --firehead-orange: #ff6600;
+            --border-color: #555;
+            --boss-purple: #8800ff;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Press Start 2P', cursive;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        #game-container {
+            max-width: 800px;
+            width: 100%;
+            border: 8px solid var(--border-color);
+            background: #000;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            box-shadow: 10px 10px 0px #000;
+        }
+
+        .screen { display: none; }
+        .active { display: block; }
+
+        h1 { font-size: 1.2rem; color: var(--firehead-orange); margin-bottom: 20px; }
+        h3 { font-size: 0.9rem; color: #00ff00; }
+        p { font-size: 0.7rem; margin-bottom: 20px; }
+
+        .sprite {
+            font-size: 60px;
+            margin: 20px 0;
+            display: block;
+            image-rendering: pixelated;
+        }
+
+        .choices {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        button {
+            background: #333;
+            border: 4px solid #fff;
+            color: #fff;
+            padding: 15px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.65rem;
+            cursor: pointer;
+            text-align: left;
+            transition: transform 0.1s;
+        }
+
+        button:hover {
+            background: var(--firehead-orange);
+            transform: scale(1.02);
+        }
+
+        .stats {
+            margin-top: 20px;
+            font-size: 0.6rem;
+            color: #aaa;
+            border-top: 2px dashed #444;
+            padding-top: 10px;
+        }
+
+        .result-msg {
+            margin-top: 20px;
+            padding: 15px;
+            border: 4px solid;
+            font-size: 0.6rem;
+        }
+        
+        .success { border-color: #00ff00; color: #00ff00; }
+        .fail { border-color: #ff0000; color: #ff0000; }
+        
+        .boss-bg { border-color: var(--boss-purple) !important; }
+    </style>
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="start-screen" class="screen active">
+            <h1>DOCUMENTATION QUEST</h1>
+            <span class="sprite">🧙‍♂️</span>
+            <p>The Kingdom of Info-Land is buried in confusing manuals! <br><br> Use the Firehead Guidelines to purify the text and defeat the Jargon Dragon.</p>
+            <button onclick="nextLevel(1)" style="text-align:center">START MISSION</button>
+        </div>
+
+        <div id="level1" class="screen">
+            <h3>LVL 1: THE FOREST OF WORDINESS</h3>
+            <span class="sprite">🌳📜🌳</span>
+            <p>A sign blocks the path. It's too long! Firehead says headings should aim for 6-8 words. Pick the "Concise Blade":</p>
+            <div class="choices">
+                <button onclick="showResult(1, true)">A: "How to Install Software Updates"</button>
+                <button onclick="showResult(1, false)">B: "Steps and Procedures for Potentially Updating Various Kinds of Applications..."</button>
+            </div>
+            <div id="result1" class="result-msg" style="display:none"></div>
+        </div>
+
+        <div id="level2" class="screen">
+            <h3>LVL 2: THE SEO SWAMP</h3>
+            <span class="sprite">🐸🧪</span>
+            <p>The SEO Frog demands a URL that matches search intent. You're writing about a Calendar App. Feed him:</p>
+            <div class="choices">
+                <button onclick="showResult(2, false)">A: /interesting-facts-time-keeping</button>
+                <button onclick="showResult(2, true)">B: /using-calendar-app-phone</button>
+            </div>
+            <div id="result2" class="result-msg" style="display:none"></div>
+        </div>
+
+        <div id="level3" class="screen">
+            <h3>LVL 3: THE JARGON DRAGON</h3>
+            <span class="sprite">🐲🔥</span>
+            <p>The Dragon speaks in "Peripheral Network Protocols". Calm it with a Grade 8 reading level:</p>
+            <div class="choices">
+                <button onclick="showResult(3, true)">A: "Connecting Your Printer to Wi-Fi"</button>
+                <button onclick="showResult(3, false)">B: "Configuring Wireless Data Transmission for External Units"</button>
+            </div>
+            <div id="result3" class="result-msg" style="display:none"></div>
+        </div>
+
+        <div id="level4" class="screen">
+            <h3>LVL 4: THE CLICKBAIT MIMIC</h3>
+            <span class="sprite">📦⁉️</span>
+            <p>A chest promises "Shocking Truths". Firehead says documentation should only promise what it delivers. Choose:</p>
+            <div class="choices">
+                <button onclick="showResult(4, false)">A: "The Shocking Truth About Cloud Storage!"</button>
+                <button onclick="showResult(4, true)">B: "Understanding Cloud Storage Basics"</button>
+            </div>
+            <div id="result4" class="result-msg" style="display:none"></div>
+        </div>
+
+        <div id="level5" class="screen">
+            <h3 style="color:var(--boss-purple)">👹 FINAL BOSS: THE SYNTAX OVERLORD</h3>
+            <span class="sprite">👾</span>
+            <p>To banish the Overlord, you must format the perfect URL. Firehead forbids underscores and special characters!</p>
+            <div class="choices">
+                <button onclick="showResult(5, false)">A: /configure_printer_wifi@setup!</button>
+                <button onclick="showResult(5, true)">B: /connect-printer-wifi</button>
+            </div>
+            <div id="result5" class="result-msg" style="display:none"></div>
+        </div>
+
+        <div id="win-screen" class="screen">
+            <h1 style="color:#00ff00">QUEST COMPLETE!</h1>
+            <span class="sprite">👑</span>
+            <p>You have mastered the Firehead Checklist!<br><br>The Kingdom's documentation is now clear, concise, and hyphen-friendly.</p>
+            <button onclick="location.reload()" style="text-align:center">RESTART QUEST</button>
+        </div>
+
+        <div class="stats">
+            HP: <span id="hp">100</span> | PROGRESS: <span id="lvl">0</span>/5
+        </div>
+    </div>
+
+    <script>
+        let currentLvl = 0;
+        let hp = 100;
+
+        function nextLevel(lvl) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            if(lvl === 6) {
+                document.getElementById('win-screen').classList.add('active');
+                document.getElementById('game-container').classList.remove('boss-bg');
+            } else {
+                const nextLvlDiv = document.getElementById('level' + lvl);
+                nextLvlDiv.classList.add('active');
+                currentLvl = lvl;
+                document.getElementById('lvl').innerText = lvl;
+                
+                // Add boss styling for final level
+                if(lvl === 5) {
+                    document.getElementById('game-container').classList.add('boss-bg');
+                }
+            }
+        }
+
+        function showResult(lvl, isCorrect) {
+            const resDiv = document.getElementById('result' + lvl);
+            resDiv.style.display = "block";
+            
+            if(isCorrect) {
+                resDiv.className = "result-msg success";
+                let msg = lvl === 5 ? "SYNTAX PURIFIED! The Overlord is defeated!" : "CRITICAL HIT! Effective documentation!";
+                resDiv.innerHTML = msg + " <br><br> <button onclick='nextLevel(" + (lvl + 1) + ")'>CONTINUE >></button>";
+            } else {
+                hp -= 25;
+                document.getElementById('hp').innerText = hp;
+                resDiv.className = "result-msg fail";
+                resDiv.innerHTML = "OOF! That violates the Firehead Checklist! You took damage. Try again!";
+                if(hp <= 0) {
+                    alert("GAME OVER: The users are too confused to continue!");
+                    location.reload();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
