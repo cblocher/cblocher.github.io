@@ -1,7 +1,7 @@
 <div class="about-layout">
 
   <div class="about-image">
-    <img src="/assets/images/chris_blocher_headshot.png" alt="Chris Blocher Headshot" />
+    <img src="/assets/images/headshot.png" alt="Chris Blocher Headshot" />
   </div>
 
   <div class="about-content">
