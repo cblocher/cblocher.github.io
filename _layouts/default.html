@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, maximum-scale=2">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <title>{{ site.title | default: site.github.repository_name }}</title>
     
@@ -28,12 +28,9 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <h1 id="project_title"><a href="/">{{ site.title | default: site.github.repository_name }}</a></h1>
-          <!-- Navigation will be included by individual markdown files or inserted here. 
-               For Jekyll pages, if you have a top-level include, you can inject it here. -->
-               {% if page.url != '/' %}
-                 {% include nav.md %}
-               {% endif %}
+          <h1 id="project_title"><a href="/">cblocher.</a></h1>
+          <!-- Navigation -->
+          {% include nav.md %}
         </header>
     </div>
 
@@ -46,11 +43,14 @@
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        {% if site.github.is_project_page %}
-        <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-        {% endif %}
-        <!-- <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p> -->
+      <footer class="inner footer-content">
+        <h2>Let’s talk!</h2>
+        <a href="mailto:cblocher@gmail.com" class="footer-email">cblocher@gmail.com</a>
+        <ul class="site-nav" style="justify-content: center;">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="{{ site.linkedin }}" target="_blank">LinkedIn</a></li>
+        </ul>
       </footer>
     </div>
   </body>
