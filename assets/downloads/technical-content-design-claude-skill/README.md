@@ -1,6 +1,6 @@
 # README - Technical Content Design — Claude Skill
 
-A Claude skill for technical writers and content designers working across SaaS, software, and mobile app products. It produces high-quality, accessible content that reads as human-written — and adapts to your client's voice, tools, and style guide.
+A Claude skill for Technical Writers and Content Designers working across SaaS, software, and mobile app products. It produces high-quality, accessible content that reads as human-written — and adapts to your client's voice, tools, and style guide.
 
 ## Disclaimer
 This skill is provided as-is and shouldn't be used to create production-ready content. It is merely the result of me learning how to build Claude skills and use reference files. Use at your own risk.
