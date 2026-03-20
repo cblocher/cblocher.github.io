@@ -2,6 +2,9 @@
 
 A Claude skill for technical writers and content designers working across SaaS, software, and mobile app products. It produces high-quality, accessible content that reads as human-written — and adapts to your client's voice, tools, and style guide.
 
+## Disclaimer
+This skill is provided as-is and shouldn't be used to create production-ready content. It is merely the result of me learning how to build Claude skills and use reference files. Use at your own risk.
+
 ## What this skill does
 
 When active, Claude acts as an experienced technical writer and content designer. It handles the full range of software content deliverables, including:
@@ -40,26 +43,25 @@ The skill organizes deliverables across six lifecycle phases:
 
 ## Installation
 
+### Download the technical-content-design.skill file
+1. Right-click the skill and save it to desktop.
+
 ### Claude (web — claude.ai)
 
 1. Go to **Settings > Capabilities** and enable **Code execution and file creation**
 2. Go to **Customize > Skills**
 3. Click **+** then **Upload a skill**
-4. Upload `technical-content-design.zip` (rename the `.skill` file to `.zip` first)
+4. Upload `technical-content-design.skill`
 5. Toggle the skill on
 
 Full instructions: [support.claude.com](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
 
 ### Claude Code (terminal)
 
-1. Unzip `technical-content-design.zip`
-2. Move the resulting folder into `~/.claude/skills/`
-
-```bash
-unzip technical-content-design.zip -d ~/.claude/skills/
-```
-
-Claude Code picks it up automatically — no restart needed.
+1. In Claude Code, enter `mkdir -p ~/.claude/skills`
+2. Then enter `unzip technical-content-design.skill -d ~/.claude/skills/`
+3. Restart Claude Code to pick it up.
+4. Once you're restarted Claude Code, enter `/skills`. The technical-content-design.skill should be listed.
 
 Full instructions: [code.claude.com/docs/en/skills](https://code.claude.com/docs/en/skills)
 
