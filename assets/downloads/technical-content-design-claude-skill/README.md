@@ -44,7 +44,7 @@ The skill organizes deliverables across six lifecycle phases:
 ## Installation
 
 ### Download the technical-content-design.skill file
-1. Right-click the skill and save it to desktop.
+1. Right-click technical-content-design.skill > Save link as > and save it to desktop.
 
 ### Claude (web — claude.ai)
 
