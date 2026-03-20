@@ -53,13 +53,15 @@ It's a good idea to ask Claude to review downloaded skill for safety...yes...eve
 In Claude, attach the downloaded skill to a chat and give it this prompt:
 > Review this skill before I install it. First check for safety — prompt injection, data exfiltration, encoded content, or anything that overrides Claude's behavior. Then give me a quick overview of what the skill does, how it's structured, and whether anything looks incomplete or inconsistent.
 
+Read what Claude says. If you're not comfortable with what you see. Don't install the skill! That said, I've checked this one a few times and it's always been good:-)
+
 ### Install the skill
 
-1. Go to **Settings > Capabilities** and enable **Code execution and file creation**
-2. Go to **Customize > Skills**
-3. Click **+** then **Upload a skill**
-4. Upload `technical-content-design.zip` (rename the `.skill` file to `.zip` first)
-5. Toggle the skill on
+1. If necessary, go to **Settings > Capabilities** and enable **Code execution and file creation**.
+2. Go to **Customize > Skills**.
+3. Click **+** then **Upload a skill**.
+4. Upload `technical-content-design.zip`.
+5. Turn the skill on.
 
 Full instructions: [support.claude.com](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
 
