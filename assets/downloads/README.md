@@ -42,8 +42,8 @@ The skill organizes deliverables across six lifecycle phases:
 
 ## Installation
 
-### Download the technical-content-design.skill file
-1. In GitHub, right-click **technical-content-design.skill** > **Save Link As** > and save it to your desktop.
+### Get the technical-content-design skill
+1. Download the [technical-content-design.zip](https://github.com/cblocher/cblocher.github.io/releases/download/v1.0/technical-content-design.zip) file.
 
 The skill file itself is a compressed file type so you won't be able to read it directly.
 
