@@ -2,12 +2,9 @@
 
 A Claude skill for Technical Writers and Content Designers working across SaaS, software, and mobile app products. It produces high-quality, accessible content that reads as human-written — and adapts to your client's voice, tools, and style guide.
 
-## Disclaimer
-This skill is provided as-is and shouldn't be used to create production-ready content. It is merely the result of me learning how to build Claude skills and use reference files. Use at your own risk.
-
 ## What this skill does
 
-When active, Claude acts as an experienced technical writer and content designer. It handles the full range of software content deliverables, including:
+When active, Claude acts as an experienced Technical Writer and Content Designer. It handles the full range of software content deliverables, including:
 
 - Help articles and user guides
 - UI copy, microcopy, and error messages
@@ -86,6 +83,30 @@ When no style guide is provided, the skill defaults to:
 
 These can be overridden at any time by uploading or pasting your own style guide.
 
+## Disclaimer
+This skill is provided as-is and shouldn't be used to create production-ready content. It is merely the result of me learning how to build Claude skills and use reference files. Use at your own risk.
+
 ## License
 
 MIT — use it, adapt it, share it.
+
+## Try it out
+
+The skill works best when the request is real. Here are three good starting points.
+
+**Write something you've been putting off**
+Ask it to produce a piece of content you actually need — a help article, an error message, an onboarding tooltip. It will ask a focused question or two before drafting and flag any assumptions it makes, so the output fits your product, not a generic one.
+
+*Example prompt:* "Write a help article explaining how to reset a password. My users are non-technical."
+
+**Hand it a messy draft**
+Paste in something you've already written — or something AI-generated — and ask it to rewrite it. This is a fast way to see its quality standards in action, especially how it handles tone, plain language, and accessibility.
+
+*Example prompt:* "Here's a draft I wrote. Rewrite it for a non-technical audience and flag anything that doesn't meet plain language standards."
+
+**Ask for a content type you've never written**
+Pick something outside your usual work — a changelog entry, a microcopy string, a compliance doc summary — and ask it to create one. This shows how the skill adapts structure and tone across very different deliverables.
+
+*Example prompt:* "Write a changelog entry for a new dark mode feature. Keep it short and aimed at end users."
+
+The common thread across all three: give it real context, even briefly. The skill is built to ask good follow-up questions, so the more honest the starting point, the better the output.
