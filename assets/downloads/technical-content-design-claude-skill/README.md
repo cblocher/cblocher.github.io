@@ -83,6 +83,20 @@ When no style guide is provided, the skill defaults to:
 
 These can be overridden at any time by uploading or pasting your own style guide.
 
+## How it works
+
+`SKILL.md` is the conductor. It tells Claude what to do at each stage — gather context, draft, self-check, suggest adjacent content — and when to consult each reference file. The reference files are where the real specificity lives.
+
+**`practitioners.md`** is the intellectual foundation including expert thinking in technical writing, UX, accessibility, information architecture, and content strategy, and explains exactly which principle each one contributes.
+
+**`writing-quality-reference.md`** is the anti-AI writing rulebook. It contains a list of flagged phrases, banned punctuation (em dashes), and structural habits to break — plus side-by-side before/after examples for help articles, error messages, API references, and tone shifts across audiences. The skill consults this before finalizing any draft.
+
+**`drafting-guidance.md`** handles three specific jobs: applying DITA content architecture principles so every piece is properly typed (concept, task, or reference) and connected to surrounding content; flagging reuse candidates (repeated procedures, product names, legal language) so nothing gets maintained in two places; and recommending visuals aggressively — diagrams, screenshots, GIFs — with accessibility requirements for each.
+
+**`accessibility-checklist.md`** is a practical WCAG 2.1 AA checklist tied to specific success criteria, with concrete right/wrong examples for each rule. It covers plain language and reading level, heading hierarchy, link text, alt text, captions, inclusive language, and table structure. The skill runs through this before delivering any draft.
+
+**`content-type-catalog.md`** is the playbook for every deliverable type the skill handles — help articles, error messages, API references, changelogs, PRDs, onboarding flows, video scripts, compliance docs, and more. Each entry defines the right structure, tone, and conventions for that format, and flags common mistakes to avoid.
+
 ## Disclaimer
 This skill is provided as-is and shouldn't be used to create production-ready content. It is merely the result of me learning how to build Claude skills and use reference files. Use at your own risk.
 
