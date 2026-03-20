@@ -55,7 +55,7 @@ In Claude, attach the downloaded skill to a chat and give it this prompt:
 
 Read what Claude says. If you're not comfortable with what you see. Don't install the skill! That said, I've checked this one a few times and it's always been good:-)
 
-### Install the skill
+### Install it
 
 1. If necessary, go to **Settings > Capabilities** and enable **Code execution and file creation**.
 2. Go to **Customize > Skills**.
@@ -67,22 +67,22 @@ Full instructions: [support.claude.com](https://support.claude.com/en/articles/1
 
 ## Try it out
 
-The skill works best when the request is real. Here are three good starting points.
+To run the skill, you don't need to do anything special. Claude picks it up automatically based on what you ask. If you ask for a help article, an error message, a PRD, or anything else that the skill's description covers, it will trigger on its own. The skill works best when the request is real. Try these prompts, for example.
 
-**Write something you've been putting off**
-Ask it to produce a piece of content you actually need — a help article, an error message, an onboarding tooltip. It will ask a focused question or two before drafting and flag any assumptions it makes, so the output fits your product, not a generic one.
+Write something you've been putting off. Ask it to produce a piece of content you actually need — a help article, an error message, an onboarding tooltip. It will ask a focused question or two before drafting and flag any assumptions it makes, so the output fits your product, not a generic one.
 
-*Example prompt:* "Write a help article explaining how to reset a password. My users are non-technical."
+*Example prompt:* 
+> Write a help article explaining how to reset a password. My users are non-technical.
 
-**Hand it a messy draft**
-Paste in something you've already written — or something AI-generated — and ask it to rewrite it. This is a fast way to see its quality standards in action, especially how it handles tone, plain language, and accessibility.
+Hand it a messy draft. Paste in something you've already written — or something AI-generated — and ask it to rewrite it. This is a fast way to see its quality standards in action, especially how it handles tone, plain language, and accessibility.
 
-*Example prompt:* "Here's a draft I wrote. Rewrite it for a non-technical audience and flag anything that doesn't meet plain language standards."
+*Example prompt:* 
+> Here's a draft I wrote. Rewrite it for a non-technical audience and flag anything that doesn't meet plain language standards.
 
-**Ask for a content type you've never written**
-Pick something outside your usual work — a changelog entry, a microcopy string, a compliance doc summary — and ask it to create one. This shows how the skill adapts structure and tone across very different deliverables.
+Ask for a content type you've never written. Pick something outside your usual work — a changelog entry, a microcopy string, a compliance doc summary — and ask it to create one. This shows how the skill adapts structure and tone across very different deliverables.
 
-*Example prompt:* "Write a changelog entry for a new dark mode feature. Keep it short and aimed at end users."
+*Example prompt:* 
+> Write a changelog entry for a new dark mode feature. Keep it short and aimed at end users.
 
 The common thread across all three: give it real context, even briefly. The skill is built to ask good follow-up questions, so the more honest the starting point, the better the output.
 
