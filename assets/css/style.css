@@ -310,7 +310,12 @@ a:hover {
 }
 
 .footer-content h2 {
-  margin-bottom: 0;
+  margin-bottom: var(--spacing-xl);
+}
+
+.footer-content h2 a {
+  color: var(--link-color);
+  text-decoration: underline;
 }
 
 .footer-email {
