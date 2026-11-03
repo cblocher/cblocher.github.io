@@ -22,22 +22,22 @@
 <div class="role-grid">
   <div class="role-card">
     <img src="/assets/images/role-tw.webp" alt="Technical Writer" />
-    <h3>Technical Writer</h3>
+    <h2>Technical Writer</h2>
     <p>I create concept, process, task, and reference topics. Long‑form content doubles as a knowledge base and a product history that supports AI‑driven solutions.</p>
   </div>
   <div class="role-card">
     <img src="/assets/images/role-cd.webp" alt="Content Designer" />
-    <h3>Content Designer</h3>
+    <h2>Content Designer</h2>
     <p>I craft labels, messages, and guidance that keep customers moving. Clear and communicative workflows build confidence, trust, and retention.</p>
   </div>
   <div class="role-card">
     <img src="/assets/images/role-cs.webp" alt="Content Strategist" />
-    <h3>Content Strategist</h3>
+    <h2>Content Strategist</h2>
     <p>I align business goals with customer needs by setting clear content priorities and success metrics. Content outcomes scale with data, research, and cross‑functional partnerships.</p>
   </div>
   <div class="role-card">
     <img src="/assets/images/role-id.webp" alt="Instructional Designer" />
-    <h3>Instructional Designer</h3>
+    <h2>Instructional Designer</h2>
     <p>I apply the 5 Moments of Need framework to design workflows, learning experiences, and performance support. Low‑risk tasks benefit from digital coaching. High‑risk tasks require hands‑on instruction.</p>
   </div>
 </div>

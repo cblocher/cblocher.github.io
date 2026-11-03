@@ -145,6 +145,16 @@ a:hover {
   align-items: center;
 }
 
+/* Site title keeps the look it had as an H1, without adding a second H1 to each page */
+#project_title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--spacing-md);
+}
+
 /* Site Title (The Red Logo Box) */
 #project_title a {
   display: inline-block;
@@ -161,6 +171,51 @@ a:hover {
 #project_title a:hover {
   background-color: var(--accent-hover);
   text-decoration: none;
+}
+
+/* Phone widths: let the logo and navigation wrap instead of overflowing the screen */
+@media (max-width: 480px) {
+  #header_wrap .inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-md);
+  }
+
+  h1 {
+    font-size: clamp(2rem, 9vw, 3.5rem);
+    overflow-wrap: break-word;
+  }
+}
+
+/* Skip link: hidden until it receives keyboard focus */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  background: var(--text-primary);
+  color: #FFFFFF;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Visible keyboard focus on every interactive element */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--text-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px #FFFFFF;
+}
+
+#main_content:focus {
+  outline: none;
 }
 
 /* Navigation List */
@@ -208,7 +263,7 @@ a:hover {
 */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
   gap: 4rem 2rem;
   margin-top: var(--spacing-xl);
 }
@@ -310,7 +365,12 @@ a:hover {
 }
 
 .footer-content h2 {
-  margin-bottom: 0;
+  margin-bottom: var(--spacing-xl);
+}
+
+.footer-content h2 a {
+  color: var(--link-color);
+  text-decoration: underline;
 }
 
 .footer-email {
@@ -377,7 +437,7 @@ a:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-.role-card h3 {
+.role-card h2 {
   font-size: 1.25rem;
   margin-bottom: var(--spacing-sm);
   text-align: left;

@@ -4,7 +4,7 @@
 <head>
   <meta charset='utf-8'>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, maximum-scale=2">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
     rel="stylesheet">
@@ -27,33 +27,37 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main_content">Skip to main content</a>
 
   <!-- HEADER -->
   <div id="header_wrap" class="outer">
     <header class="inner">
-      <h1 id="project_title"><a href="/">cblocher.</a></h1>
+      <div id="project_title"><a href="/">cblocher.</a></div>
       <!-- Navigation -->
-      {% include nav.md %}
+      <nav aria-label="Main">
+        {% include nav.md %}
+      </nav>
     </header>
   </div>
 
   <!-- MAIN CONTENT -->
   <div id="main_content_wrap" class="outer">
-    <section id="main_content" class="inner">
+    <main id="main_content" class="inner" tabindex="-1">
       {{ content }}
-    </section>
+    </main>
   </div>
 
   <!-- FOOTER  -->
   <div id="footer_wrap" class="outer">
     <footer class="inner footer-content">
-      <h2>Let’s talk!</h2>
-      <a href="mailto:cblocher.work@gmail.com" class="footer-email">cblocher.work@gmail.com</a>
-      <ul class="site-nav" style="justify-content: center;">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="{{ site.linkedin }}" target="_blank">LinkedIn</a></li>
-      </ul>
+      <h2><a href="{{ site.linkedin }}" aria-label="Let’s talk: connect with me on LinkedIn">Let’s talk!</a></h2>
+      <nav aria-label="Footer">
+        <ul class="site-nav" style="justify-content: center;">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="{{ site.linkedin }}" target="_blank">LinkedIn</a></li>
+        </ul>
+      </nav>
     </footer>
   </div>
 </body>
