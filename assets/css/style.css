@@ -163,6 +163,37 @@ a:hover {
   text-decoration: none;
 }
 
+/* Skip link: hidden until it receives keyboard focus */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  background: var(--text-primary);
+  color: #FFFFFF;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Visible keyboard focus on every interactive element */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--text-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px #FFFFFF;
+}
+
+#main_content:focus {
+  outline: none;
+}
+
 /* Navigation List */
 .site-nav {
   display: flex;
