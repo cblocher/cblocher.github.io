@@ -145,6 +145,16 @@ a:hover {
   align-items: center;
 }
 
+/* Site title keeps the look it had as an H1, without adding a second H1 to each page */
+#project_title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--spacing-md);
+}
+
 /* Site Title (The Red Logo Box) */
 #project_title a {
   display: inline-block;
@@ -161,6 +171,20 @@ a:hover {
 #project_title a:hover {
   background-color: var(--accent-hover);
   text-decoration: none;
+}
+
+/* Phone widths: let the logo and navigation wrap instead of overflowing the screen */
+@media (max-width: 480px) {
+  #header_wrap .inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-md);
+  }
+
+  h1 {
+    font-size: clamp(2rem, 9vw, 3.5rem);
+    overflow-wrap: break-word;
+  }
 }
 
 /* Skip link: hidden until it receives keyboard focus */
@@ -239,7 +263,7 @@ button:focus-visible,
 */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
   gap: 4rem 2rem;
   margin-top: var(--spacing-xl);
 }
