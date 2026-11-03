@@ -3,7 +3,7 @@
   <h1 style="text-align: center; margin-bottom: 1rem;">How I built a custom Claude AI skill for content design</h1>
   <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.25rem;"><em>Content design is often misunderstood or under-resourced. Here is how I trained an AI partner to help.</em></p>
 
-  <img src="/assets/images/project_ai_skill.png" alt="AI Skill Hero Image" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 3rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+  <img src="/assets/images/comic_ai_unexpected.png" alt="AI Skill Hero Image" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 3rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
 
   ## The Problem: Generic AI output
 

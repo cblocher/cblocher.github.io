@@ -3,7 +3,7 @@
   <h1 style="text-align: center; margin-bottom: 1rem;">A digital coach: Designing a learning panel for a complex enterprise tool</h1>
   <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.25rem;"><em>Help enterprise users navigate a highly technical workflow without leaving the app.</em></p>
 
-  <img src="/assets/images/project_digital_coach.png" alt="Digital Coach Hero Image" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 3rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+  <img src="/assets/images/prototype_learning_panel_1.png" alt="Digital Coach Hero Image" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 3rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
 
   ## The Team & Goal
 
@@ -25,7 +25,6 @@
 
   <div style="display: flex; flex-direction: column; gap: 1rem; justify-content: center; margin: 3rem 0;">
     <img src="/assets/images/prototype_learning_panel_1.png" alt="Learning Panel Landing State" style="max-width: 100%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);" />
-    <img src="/assets/images/prototype_learning_panel_3_details.png" alt="Learning Panel Detailed Content Structure" style="max-width: 100%; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);" />
   </div>
 
   ## Process: Develop & Test
