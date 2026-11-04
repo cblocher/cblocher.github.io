@@ -1,7 +1,7 @@
 {% assign case_studies = site.pages | where_exp: "p", "p.path contains 'projects/'" | where_exp: "p", "p.url != page.url" | sort: "order" %}
 {% if case_studies.size > 0 %}
 <nav class="related-projects" aria-labelledby="related-projects-heading">
-  <h2 id="related-projects-heading">Read More of My Case Studies</h2>
+  <h2 id="related-projects-heading">Read more of my case studies</h2>
   <ul class="projects-grid">
     {% for study in case_studies %}
     <li>

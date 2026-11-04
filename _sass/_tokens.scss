@@ -21,6 +21,13 @@
   --font-heading: 'Montserrat', system-ui, -apple-system, sans-serif;
   --font-body: 'Lora', Georgia, serif;
 
+  // Heading capitalization. Headings are typed in sentence case in the Markdown files, and
+  // this is set to "none" so they show as typed. It is a display setting only: it does not
+  // change what screen readers read, the browser tab title, or link previews.
+  // Other values: "capitalize" (first letter of every word, small words included),
+  // "uppercase", or "lowercase". There is no CSS value for true Title Case or sentence case.
+  --heading-case: none;
+
   // Spacing
   --space-sm: 0.5rem;
   --space-md: 1rem;
