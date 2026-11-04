@@ -17,7 +17,7 @@ results: >-
 facts:
   Team: "Me"
   My role: "Usability testing"
-  Timeline: "3 months"
+  Timeline: "1 week"
   Tools: "Teal, Microsoft Edge, TechSmith Snagit, Figma"
 redirect_from:
   - /projects-teal/

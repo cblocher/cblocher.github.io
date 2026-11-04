@@ -2,7 +2,7 @@
 title: "Gamifying a style guide"
 summary: "I used Gemini to build a learning game quickly from a PDF that contained content guidelines. The “Headline Hero” game was well-received by testers. These style guide games will be used to onboard new team members and to remind existing employees of the rules they should be applying already."
 card_title: "Onboarding: Gamifying a style guide"
-card_summary: "Vibe-coded a style-guide game to onboard new team members and to remind current employees of rules they should be using (3 days)."
+card_summary: "Vibe-coded a style-guide game to onboard new team members and to remind current employees of rules they should be using (30 minutes)."
 order: 4
 thumbnail: /assets/images/projects/style-guide-game/thumbnail.webp
 hero:
@@ -13,7 +13,7 @@ overview: >-
 goal: >-
   The objective was to use AI to code the game based on the guidelines provided, where players earned points for correct answers. This game should be fun, educational, and a practical tool for onboarding and training, ensuring people quickly internalized the guidelines while enjoying the process.
 results: >-
-  The Headline Hero game received positive feedback from testing, boosting participation and retention of the guidelines. It also enabled the identification of areas where the rules and examples could be clarified or expanded. Additionally, this innovative approach demonstrated our commitment to embracing innovative opportunities to enhance internal processes. [Give it a try!](/projects-ai-headline-hero.html)
+  The Headline Hero game received positive feedback from testing, boosting participation and retention of the guidelines. It also enabled the identification of areas where the rules and examples could be clarified or expanded. Additionally, this innovative approach demonstrated our commitment to embracing opportunities to enhance internal processes. [Give it a try!](/projects-ai-headline-hero.html)
 facts:
   Team: "Me"
   My role(s): "Coder, usability tester"
