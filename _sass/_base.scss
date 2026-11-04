@@ -82,3 +82,26 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+// Code. Long lines wrap instead of scrolling sideways, so a code block never forces
+// the whole page to scroll on a phone and needs no keyboard-focus workaround.
+code,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+pre code {
+  font-size: 1em;
+}
