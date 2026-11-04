@@ -228,7 +228,7 @@ This file is not published. `_config.yml` excludes the `docs` folder.
 - **Decision:** The four role photos and the four certification badges use empty alt text, because the heading or title next to each one says what it is. The headshot and the Meta Quest photo get written descriptions. The UXfolio "Coming soon..." tile appears on the home page and in the "Read more" list, as a card with no link.
 - **Reasons:** A screen reader should not repeat the same name twice. The placeholder tile is part of the UXfolio page, so under D23 it comes across.
 
-### D26: Fix the Tailwind line on the Documentation Quest page
+### D26: Fix the Tailwind line on the doc-quest game page
 
 - **Date:** 2026-11-04
 - **Status:** Decided; applied on the branch
