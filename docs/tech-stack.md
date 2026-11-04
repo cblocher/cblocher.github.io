@@ -22,7 +22,7 @@ Decision IDs (D01 and so on) point to entries in `decision-log.md`, which holds 
 | Redirects | `jekyll-redirect-from` plugin (D07) | A server-side redirect file | Supported by GitHub Pages, old links keep working | Redirects are page-based (meta refresh), not HTTP 301 |
 | Search engine files | `jekyll-sitemap` plugin, a hand-written `robots.txt`, and a custom 404 page (D33) | Writing the sitemap by hand | The sitemap updates itself as pages are added | The `.txt` file needs a forced `git add` because of `.gitignore` |
 | SEO tags | `jekyll-seo-tag` plugin, with the tab title written by hand (D30) | Writing all tags by hand | Description, sharing tags, and canonical address with little code | The plugin's own title format was wrong for this site |
-| Embeds | Figma frame, YouTube from `youtube-nocookie.com` (D17) | Screenshots, plain links | Matches UXfolio, stays current | Third-party requests, and they could not be tested in the build environment |
+| Embeds | Figma frame, YouTube from `youtube-nocookie.com` (D17) | Screenshots, plain links | Matches UXfolio, stays current | Third-party requests. Both display correctly in a normal browser (checked 2026-11-04) |
 | Carousel | None; slides are stacked and testimonials are a list (D18) | Script-based carousel | Works with keyboard and screen readers, no script to maintain | Longer page |
 | Accessibility checks | axe-core in a headless browser, WCAG 2.1 A and AA rules (D11) | Manual audit only | Repeatable, catches many problems quickly | Automated tools find only some problems |
 | Writing check | Vale with one heading rule (D13, D14) | CSS capitalization, a Liquid filter | Fixes the text at its source | Catches only what a rule describes |

@@ -8,7 +8,7 @@ What the site collects, and which outside services it contacts. Last reviewed: 2
 
 Nothing. The pages contain no analytics, advertising, or tracking scripts (checked on the live home page on 2026-11-04). The site sets no cookies of its own (checked on four live pages on 2026-11-04) and has no forms, accounts, or comments.
 
-**One exception to know about:** when the Figma frame on the Teal page loads, Figma sets three cookies from its own domains. The test could not load the YouTube video, so its cookie behavior was not observed.
+**One exception to know about:** when the Figma frame on the Teal page loads, Figma sets three cookies from its own domains. The cookie test could not load the YouTube video, so its cookie behavior was not examined.
 
 The footer used to show an email address. It was replaced with a LinkedIn link on 2026-11-03.
 
@@ -27,7 +27,7 @@ When a visitor opens a page, their browser may request files from these services
 | YouTube | The video | The AI skill page | `youtube-nocookie.com` |
 | Figma | The feedback file | The Teal page | `embed.figma.com`, `www.figma.com` |
 
-The video uses YouTube's privacy-friendly address, which is meant to set no tracking cookies until someone plays it. This was not observed in testing. The video and Figma frames load lazily, as the visitor scrolls near them.
+The video uses YouTube's privacy-friendly address, which is meant to set no tracking cookies until someone plays it. Its cookie behavior was not examined. The video and Figma frames load lazily, as the visitor scrolls near them.
 
 If a visitor's network blocks one of these services, the page still works. Fonts fall back to system fonts, and a blocked frame shows an empty box with a text link below it.
 
