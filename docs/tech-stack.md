@@ -20,6 +20,7 @@ Decision IDs (D01 and so on) point to entries in `decision-log.md`, which holds 
 | Images | WebP and PNG, resized to 2000 px at most, originals kept untouched (D15) | Automatic image pipeline | Originals are never degraded, and web copies can be rebuilt | Web copies are made by hand |
 | Thumbnails | 800 by 600 pixels, whole screen fitted, 1px border from CSS (D16) | Crop to fill, device-frame mockups | Nothing is cut off, and all four are the same size | Smaller screens inside the frame |
 | Redirects | `jekyll-redirect-from` plugin (D07) | A server-side redirect file | Supported by GitHub Pages, old links keep working | Redirects are page-based (meta refresh), not HTTP 301 |
+| Search engine files | `jekyll-sitemap` plugin, a hand-written `robots.txt`, and a custom 404 page (D33) | Writing the sitemap by hand | The sitemap updates itself as pages are added | The `.txt` file needs a forced `git add` because of `.gitignore` |
 | SEO tags | `jekyll-seo-tag` plugin, with the tab title written by hand (D30) | Writing all tags by hand | Description, sharing tags, and canonical address with little code | The plugin's own title format was wrong for this site |
 | Embeds | Figma frame, YouTube from `youtube-nocookie.com` (D17) | Screenshots, plain links | Matches UXfolio, stays current | Third-party requests, and they could not be tested in the build environment |
 | Carousel | None; slides are stacked and testimonials are a list (D18) | Script-based carousel | Works with keyboard and screen readers, no script to maintain | Longer page |

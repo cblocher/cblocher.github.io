@@ -33,7 +33,8 @@ What is built in, what has been tested, and what has not. Last reviewed: 2026-11
 |------|--------|------|
 | axe-core, WCAG 2.0 and 2.1 A and AA rules, nine live pages at desktop width | 0 violations | 2026-11-04 |
 | axe-core best-practice rules, the same nine pages | 0 issues on seven pages. The two game pages report one missing `main` landmark and unlabeled regions (`landmark-one-main`, `region`). | 2026-11-04 |
-| Sideways scrolling at 390 px, nine live pages | None | 2026-11-04 |
+| axe-core WCAG A and AA plus best-practice rules on the new 404 page, built locally | 0 violations | 2026-11-04 |
+| Sideways scrolling at 390 px, nine live pages, and the 404 page | None | 2026-11-04 |
 | Every image has an `alt` attribute, nine live pages | Yes | 2026-11-04 |
 | Contrast ratios computed for every text and background pair | All pass (see `design-system.md`) | 2026-11-04 |
 

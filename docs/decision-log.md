@@ -283,6 +283,23 @@ This file is not published. `_config.yml` excludes the `docs` folder.
 - **Not done:** A public accessibility statement page. It would be published, so it needs Chris's approval. It is listed in `docs/known-issues.md`.
 - **Findings recorded while writing:** the site has no sitemap, `robots.txt`, or custom 404 page; the Teal page's Figma frame sets three Figma cookies; and the two game pages lack a `main` landmark.
 
+### D32: UXfolio already has the wording fixes, so the docs are corrected
+
+- **Date:** 2026-11-04
+- **Status:** Decided; applied on the branch `claude/docs-fixes-and-seo`
+- **Context:** D19, D20, and D29 said Chris needed to make the same wording fixes on UXfolio. A check on 2026-11-04, after the merge, found they were already done there: no "Caputured," no "To have Claude to produce," no "IterateHave," no "success criterion"; the Teal page says "1 week" and no longer says "3 months" or "three months"; the game page says "30 minutes" and no longer says "embracing innovative opportunities."
+- **Decision:** Remove those items from `docs/known-issues.md`, and record the correction here and in `CHANGELOG.md`. D19, D20, and D29 stay as written, because the log is append-only.
+- **Still open on UXfolio:** The LinkedIn footer link (`linkedin.com/cblocher`, probably missing `/in/`), and five file names on the AI skill page that UXfolio turned into links to unrelated websites.
+
+### D33: Add a sitemap, a robots file, and a custom 404 page
+
+- **Date:** 2026-11-04
+- **Status:** Decided; applied on the branch `claude/docs-fixes-and-seo`
+- **Context:** The live site had no `sitemap.xml`, `robots.txt`, or custom 404 page, and each returned GitHub's default "not found" page.
+- **Decision:** Add `jekyll-sitemap` to the plugins in `_config.yml`. Add a `robots.txt` that allows all crawlers and points to the sitemap. Add `404.md`, published as `/404.html`, with a message, two links, and the case study cards.
+- **Details:** The sitemap lists the nine real pages and leaves out the redirect stubs and the 404 page. In a local build its addresses are relative, because GitHub adds the site address only in its own build. This is to be checked on the live site after merging. `.gitignore` ignores every `.txt` file, so `robots.txt` was added with `git add -f`.
+- **Checks:** The 404 page has 0 violations on both the WCAG rules and the best-practice rules, with no sideways scrolling at 390 pixels.
+
 ---
 
 ## Open decisions
@@ -294,7 +311,6 @@ This file is not published. `_config.yml` excludes the `docs` folder.
 | A public accessibility statement page | Planned for the documentation phase |
 | Whether to delete the branch `claude/case-study-fixes` | Waiting for Chris |
 | Check the Figma embed and the YouTube video in a real browser | After merge |
-| Make the same typo and wording fixes on UXfolio (the six in the phase 4 review sheet, and the four Chris made: the Teal facts row and Capture sentence, the game card time, and "embracing opportunities") | Waiting for Chris |
 | Fix the likely broken LinkedIn address in UXfolio's footer (`linkedin.com/cblocher` has no `/in/`) | Waiting for Chris |
 | Fix the five `.md` file names that UXfolio turned into web links on the AI skill page | Waiting for Chris |
 | Remove the allowed domains added for this work (`uxfol.io`, `cblocher.github.io`, the Figma hosts, `cdn.tailwindcss.com`) | Waiting for Chris, after the site is merged |

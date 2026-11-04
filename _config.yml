@@ -9,10 +9,12 @@ theme: null
 linkedin: "https://www.linkedin.com/in/chrisblocher"
 
 # Plugins that GitHub Pages supports.
-# redirect-from keeps old addresses working. seo-tag writes the page title and sharing tags.
+# redirect-from keeps old addresses working. seo-tag writes the description and sharing tags.
+# sitemap writes /sitemap.xml so search engines can find every page.
 plugins:
   - jekyll-redirect-from
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Layouts are chosen here so pages do not each need a layout line.
 defaults:
