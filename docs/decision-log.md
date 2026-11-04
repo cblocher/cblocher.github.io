@@ -263,6 +263,15 @@ This file is not published. `_config.yml` excludes the `docs` folder.
 - **Decision:** Change the phrase to "over the course of one week," as Chris directed, so the page agrees with itself. Chris's wording is lowercase mid-sentence here ("over the course of one week").
 - **Consequences:** UXfolio still says "3 months" in the facts row and "three months" in this sentence, and UXfolio is the source of truth under D23. Chris needs to make both edits there, or the next sync would undo them.
 
+### D30: Write the browser tab title by hand, and use a comma in the site title
+
+- **Date:** 2026-11-04
+- **Status:** Decided; applied on the branch `claude/site-title-fix`
+- **Context:** After the merge, a live check showed two problems with tab titles. The SEO plugin appended the whole site description to the home page title, and it dropped the `|` from the site title, so inner pages read "About me | Chris Blocher Technical Writer & Mentor."
+- **Decision:** Change the site title in `_config.yml` from "Chris Blocher | Technical Writer & Mentor" to "Chris Blocher, Technical Writer & Mentor." `_includes/head.html` now writes the `<title>` tag itself (home page: the site title; other pages: page title, then the site title) and tells the plugin not to (`{% seo title=false %}`). The plugin still writes the description, canonical address, and sharing tags.
+- **Alternatives considered:** Keep the pipe and fix only the home page title. Set the home page `title` in its settings, which still left the description appended.
+- **Result:** Home reads "Chris Blocher, Technical Writer & Mentor." Inner pages read "Page title | Chris Blocher, Technical Writer & Mentor." Each page has exactly one title tag.
+
 ---
 
 ## Open decisions

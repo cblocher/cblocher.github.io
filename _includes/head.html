@@ -4,4 +4,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-{% seo %}
+{%- comment -%}
+  The tab title is written here, not by the SEO plugin. The plugin adds the whole site description to the
+  home page title and drops the "|" from the site title. The plugin still writes the description and sharing tags.
+{%- endcomment -%}
+<title>{% if page.url == '/' %}{{ site.title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title>
+{% seo title=false %}
