@@ -106,7 +106,7 @@ Building this skill didn’t replace my expertise. It amplified, caffeinated, an
 
 The skill is the “proof” of the thinking. The “thinking” is the real work and the real fun!
 
-{% include embed.html src="https://www.youtube-nocookie.com/embed/COqobAqyY0A" link="https://www.youtube.com/watch?v=COqobAqyY0A" title="Video that accompanies the AI skill case study" %}
+{% include embed.html src="https://www.youtube-nocookie.com/embed/COqobAqyY0A" link="https://www.youtube.com/watch?v=COqobAqyY0A" title="Multi-Modal Video Generation Process" %}
 
 ## Learnings
 
