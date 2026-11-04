@@ -44,6 +44,7 @@ slides:
     caption: "Choosing Offset Plane shows plane guidance."
 redirect_from:
   - /projects-cabira/
+  - /projects-cabira.html
 ---
 
 ## Research

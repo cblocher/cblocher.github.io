@@ -16,6 +16,7 @@ results: >-
   After nailing down a repeatable flow and clarifying context, the custom Claude skill is now extensible and works across formats and surfaces even when context, guidelines, and scenarios change. [Try it!](https://github.com/cblocher/cblocher.github.io/blob/main/assets/downloads/README.md)
 redirect_from:
   - /projects-ai/
+  - /projects-ai.html
 ---
 
 8-minute read

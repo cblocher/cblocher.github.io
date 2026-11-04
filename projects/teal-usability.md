@@ -21,6 +21,7 @@ facts:
   Tools: "Teal, Microsoft Edge, TechSmith Snagit, Figma"
 redirect_from:
   - /projects-teal/
+  - /projects-teal.html
 ---
 
 ## Plan

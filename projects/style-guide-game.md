@@ -21,6 +21,7 @@ facts:
   Tools: "Google Gemini"
 redirect_from:
   - /projects-onboarding/
+  - /projects-onboarding.html
 ---
 
 ## Plan
