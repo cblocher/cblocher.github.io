@@ -23,7 +23,7 @@ Each item says who can act on it. Remove an item when it is fixed, and record th
 | Item | Detail | Fix |
 |------|--------|-----|
 | Redirects are not HTTP 301 | GitHub Pages cannot send real redirects, so old addresses use a page with a meta refresh. Search engines generally follow it, but a 301 is stronger. | Only a different host solves this |
-| No `sitemap.xml`, `robots.txt`, or custom 404 page | Each returns GitHub's default "not found" page. | Add the `jekyll-sitemap` plugin to `_config.yml`, add a `robots.txt`, and add a `404.md` page |
+| `.gitignore` ignores every `.txt` file | A new `.txt` file (such as `robots.txt`) must be added with `git add -f`. Files already tracked are not affected. | Remove or narrow the `*.txt` line in `.gitignore` |
 | Game pages lack a `main` landmark | The best-practice scan reports `landmark-one-main` and `region`. The pages are standalone HTML. | Wrap each game's content in a `main` element |
 | Game pages load Tailwind from a CDN | They depend on `cdn.tailwindcss.com` being reachable | Build the styles into the repo |
 | The `doc-quest` page's Tailwind line was broken until 2026-11-04 | Fixed in D26 | None |
@@ -37,11 +37,10 @@ Each item says who can act on it. Remove an item when it is fixed, and record th
 
 ## UXfolio items (outside this repo)
 
-The GitHub site follows UXfolio, so these can only be fixed there.
+The GitHub site follows UXfolio, so these can only be fixed there. The typo and wording fixes were already made on UXfolio (checked 2026-11-04). Two items remain.
 
 | Item | Detail |
 |------|--------|
-| Typos and wording | Six fixes listed in the phase 4 review, and four edits made on the GitHub side only (the Teal facts row and Capture sentence, the game card time, and "embracing opportunities") |
 | LinkedIn footer link | The footer link reads `linkedin.com/cblocher` without `/in/`, which probably does not open the profile |
 | File names turned into links | Five file names on the AI skill page (`practitioners.md` and four more) are links to unrelated websites |
 
@@ -51,7 +50,7 @@ The GitHub site follows UXfolio, so these can only be fixed there.
 
 | Item | Owner |
 |------|-------|
-| Delete the merged branches: `claude/case-study-fixes` (never merged, now obsolete), `claude/site-restructure`, `claude/site-title-fix`, and this documentation branch after it merges | Site owner |
+| Delete the old branches on GitHub: `claude/case-study-fixes` (never merged, now obsolete), `claude/site-fixes`, `claude/site-title-fix`, `claude/site-docs`, and, once it is merged, `claude/docs-fixes-and-seo`. `claude/site-restructure` is already gone. The build environment could not delete them. Turn on "Automatically delete head branches" in the repo settings to prevent this. | Site owner |
 | Remove the extra domains added to the build environment: `uxfol.io`, `cblocher.github.io`, the Figma hosts, `cdn.tailwindcss.com` | Site owner |
 | Turn on "Keep my email addresses private" in GitHub settings | Site owner |
 | Review the Claude GitHub App's access to this repo | Site owner |

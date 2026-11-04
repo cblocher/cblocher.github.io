@@ -6,6 +6,18 @@ This file is not published. `_config.yml` excludes it.
 
 ---
 
+## 2026-11-04, second entry
+
+### Added
+
+- A sitemap (`/sitemap.xml`), a `robots.txt`, and a custom "Page not found" page (`/404.html`).
+
+### Corrected
+
+- The documentation and decision log said the wording fixes still needed to be made on UXfolio. They were already made there. The earlier entry for 2026-11-04 is unchanged. See decision D32.
+
+---
+
 ## 2026-11-04
 
 ### Rebuilt (pull request 2)

@@ -18,6 +18,9 @@ Every address on the site and every old address that still works. Last reviewed:
 | `/projects-doc-quest.html` | The Documentation Quest (game) | `projects-doc-quest.html` |
 | `/assets/downloads/` | The skill's README | `assets/downloads/README.md` |
 | `/assets/css/main.css` | The stylesheet | `assets/css/main.scss` and `_sass/` |
+| `/sitemap.xml` | The list of pages for search engines, written by the `jekyll-sitemap` plugin | Generated |
+| `/robots.txt` | Tells crawlers they may visit everything and where the sitemap is | `robots.txt` |
+| `/404.html` | The "Page not found" page, shown for any address that does not exist | `404.md` |
 
 The navigation links to Home, About, and LinkedIn. Case studies are reached from the home page cards and from the "Read more of my case studies" list on each case study.
 
