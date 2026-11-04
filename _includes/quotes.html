@@ -1,0 +1,19 @@
+{%- comment -%}
+  The testimonials, as a plain list. Set them in the page settings:
+  quotes:
+    - text: "The words of the quote, without quotation marks"
+      who: "Job title, Team"
+  Quotation marks are added here, so do not type them in the settings.
+{%- endcomment -%}
+{% if page.quotes %}
+<ul class="quotes">
+  {% for quote in page.quotes %}
+  <li>
+    <figure class="quote">
+      <blockquote><p>“{{ quote.text }}”</p></blockquote>
+      <figcaption>{{ quote.who }}</figcaption>
+    </figure>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}

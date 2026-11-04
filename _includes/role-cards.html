@@ -1,0 +1,19 @@
+{%- comment -%}
+  The four role cards on the About page. Set them in the page settings:
+  roles:
+    - title: "Technical Writer"
+      text: "..."
+      image: /assets/images/roles/technical-writer.webp
+  The photos are decorative, because the title beside each one says what it is, so their alt text is empty.
+{%- endcomment -%}
+{% if page.roles %}
+<ul class="role-grid">
+  {% for role in page.roles %}
+  <li class="role-card">
+    <img src="{{ role.image | relative_url }}" alt="" loading="lazy" decoding="async">
+    <h2>{{ role.title }}</h2>
+    <p>{{ role.text }}</p>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}

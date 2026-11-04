@@ -93,3 +93,11 @@ Pages at the source: [about](https://uxfol.io/p/5a5a1147/about)
 | `_originals/about/cert-5-moments.png` | 1896x1888 | certification | `8LIKLTe3cbxCcmr6.png` | `assets/images/certs/5-moments.webp` (600x597, resized) |
 | `_originals/about/cert-pendo.png` | 680x680 | certification | `tWcRDsAKrj2epBay.png` | `assets/images/certs/pendo.png` (680x680, copied unchanged) |
 | `_originals/about/cert-atd.png` | 600x600 | certification | `fwyqndg56WmGUn9p.png` | `assets/images/certs/atd.png` (600x600, copied unchanged) |
+
+---
+
+## Coming soon placeholder
+
+| Original | Size | Role | UXfolio file | Web copy |
+|----------|------|------|--------------|----------|
+| `_originals/coming-soon/coming-soon.webp` | 254x551 | placeholder card | `HePNCqXqAS0biy3P.webp` | `assets/images/projects/coming-soon/thumbnail.webp` (800x600, whole image fitted on the page background) |

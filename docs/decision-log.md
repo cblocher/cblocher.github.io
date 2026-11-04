@@ -204,6 +204,30 @@ This file is not published. `_config.yml` excludes the `docs` folder.
 - **Decision:** The quote will read "He is [an expert in] his craft and genuinely a pleasure to work alongside." The brackets show readers the wording was edited.
 - **Alternatives considered:** Leave the quote as written. Cut the sentence with an ellipsis.
 
+### D23: UXfolio is always the latest version
+
+- **Date:** 2026-11-04
+- **Status:** Decided
+- **Context:** The UXfolio portfolio is newer than the GitHub site on the About page and the home page. UXfolio has newer text, new images, a new section, and a "Coming soon..." tile.
+- **Decision:** When the two differ, UXfolio wins, and its newest information is added to the GitHub site. Chris keeps UXfolio current, and the GitHub site follows it.
+- **Consequences:** Edits made on the GitHub side only (the typo fixes in D19) must also be made on UXfolio, or the next sync will undo them.
+
+### D24: Mentoring items are not carried over
+
+- **Date:** 2026-11-04
+- **Status:** Decided
+- **Context:** The old GitHub About page ended with an ADPList booking widget, a "Let's talk!" paragraph about mentoring, and a CareerVillage line. UXfolio has none of them.
+- **Decision:** Leave them out of the new About page. They stay in git history (the About page as of commit `eccaa6d`).
+- **Alternatives considered:** Keep the whole section, or keep the text and link without the embedded widget.
+- **Reasons:** Under D23, UXfolio is the latest version.
+
+### D25: Decorative images get empty alt text; the "Coming soon..." tile is included
+
+- **Date:** 2026-11-04
+- **Status:** Decided; the alt text is awaiting Chris's review
+- **Decision:** The four role photos and the four certification badges use empty alt text, because the heading or title next to each one says what it is. The headshot and the Meta Quest photo get written descriptions. The UXfolio "Coming soon..." tile appears on the home page and in the "Read more" list, as a card with no link.
+- **Reasons:** A screen reader should not repeat the same name twice. The placeholder tile is part of the UXfolio page, so under D23 it comes across.
+
 ---
 
 ## Open decisions
