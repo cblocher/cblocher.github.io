@@ -272,6 +272,17 @@ This file is not published. `_config.yml` excludes the `docs` folder.
 - **Alternatives considered:** Keep the pipe and fix only the home page title. Set the home page `title` in its settings, which still left the description appended.
 - **Result:** Home reads "Chris Blocher, Technical Writer & Mentor." Inner pages read "Page title | Chris Blocher, Technical Writer & Mentor." Each page has exactly one title tag.
 
+### D31: Document the site in `docs/`, kept out of the published site
+
+- **Date:** 2026-11-04
+- **Status:** Decided; drafted on the branch `claude/site-docs`
+- **Context:** Chris asked for the site's development to be documented, including technology decisions and reasoning, with the standard documentation a site should have.
+- **Decision:** Write the documents as Markdown files in `docs/` (architecture, tech stack, design system, accessibility, content guide, workflow and maintenance, redirects and site map, privacy and third parties, known issues, and an index), plus `CHANGELOG.md` at the top level. Exclude both from the build in `_config.yml`. Keep this decision log as the record of individual decisions, and `docs/tech-stack.md` as the summary of technology choices.
+- **Alternatives considered:** A wiki, or a documentation site. Both would need more setup and would live apart from the code.
+- **Reasons:** Documentation that lives in the repo is reviewed in the same pull request as the change it describes, and it is backed up with the code.
+- **Not done:** A public accessibility statement page. It would be published, so it needs Chris's approval. It is listed in `docs/known-issues.md`.
+- **Findings recorded while writing:** the site has no sitemap, `robots.txt`, or custom 404 page; the Teal page's Figma frame sets three Figma cookies; and the two game pages lack a `main` landmark.
+
 ---
 
 ## Open decisions

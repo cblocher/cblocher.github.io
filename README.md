@@ -30,7 +30,10 @@ cblocher.github.io/
 ├── _originals/            Full-size source images. Never edited, never published.
 ├── _vale/                 Writing-check rules (see Writing checks below)
 ├── .vale.ini              Writing-check settings
-├── docs/                  Learning guide for GitHub, Jekyll, and Vale. Not published.
+├── docs/                  Documentation (architecture, decisions, design, accessibility, and more). Not published.
+├── CHANGELOG.md           What changed and when. Not published.
+├── _data/                 Data files (the "Coming soon" card)
+├── .github/workflows/     The deploy workflow GitHub runs on every merge to main
 ├── index.md               Home page
 ├── about.md               About page
 └── projects/              One file per case study
@@ -70,6 +73,12 @@ Two game demos, `projects-doc-quest.html` and `projects-ai-headline-hero.html`, 
 ## Writing checks
 
 Vale checks that headings use sentence case. The settings are in `.vale.ini` and `_vale/styles/Site/Headings.yml`. Run `vale projects/` from the top folder. For how it works, and for a guide to GitHub and Jekyll, read `docs/learning-the-tools.md`.
+
+---
+
+## Documentation
+
+Start at `docs/README.md`. It lists every document: architecture, technology decisions and reasons, the design system, accessibility, the content guide, workflow and maintenance, redirects, privacy, and known issues. The full record of decisions is `docs/decision-log.md`. What changed and when is in `CHANGELOG.md`.
 
 ---
 

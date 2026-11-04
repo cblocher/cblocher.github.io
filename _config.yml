@@ -30,6 +30,7 @@ defaults:
 # _originals holds full-size source images and is never edited in place.
 exclude:
   - README.md
+  - CHANGELOG.md
   - docs
   - _originals
   - _vale
