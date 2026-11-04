@@ -1,8 +1,23 @@
 // Case study pages (layout: project).
 
+// The page is as wide as the site container. Reading text stays in a narrower column;
+// the hero, facts, and embeds use the full width, as they do on UXfolio.
 .project {
-  max-width: var(--container-width-narrow);
+  max-width: var(--container-width);
   margin: 0 auto;
+}
+
+.project__header,
+.project__body > p,
+.project__body > h2,
+.project__body > h3,
+.project__body > h4,
+.project__body > ul,
+.project__body > ol,
+.project__body > .figure {
+  max-width: var(--container-width-narrow);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .project__header {
@@ -84,11 +99,11 @@
   color: var(--text-secondary);
 }
 
-// Embedded frames, such as the Figma file. 16:9 on desktop, taller on phones.
+// Embedded frames, such as the Figma file. 16:9 like the UXfolio version, with no border.
+// On phones the frame gets taller so the content stays usable.
 .embed__frame {
   position: relative;
   aspect-ratio: 16 / 9;
-  border: 1px solid var(--border);
   background: var(--bg-secondary);
 }
 
