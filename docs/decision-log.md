@@ -228,6 +228,22 @@ This file is not published. `_config.yml` excludes the `docs` folder.
 - **Decision:** The four role photos and the four certification badges use empty alt text, because the heading or title next to each one says what it is. The headshot and the Meta Quest photo get written descriptions. The UXfolio "Coming soon..." tile appears on the home page and in the "Read more" list, as a card with no link.
 - **Reasons:** A screen reader should not repeat the same name twice. The placeholder tile is part of the UXfolio page, so under D23 it comes across.
 
+### D26: Fix the Tailwind line on the Documentation Quest page
+
+- **Date:** 2026-11-04
+- **Status:** Decided; applied on the branch
+- **Context:** `projects-doc-quest.html` line 7 read `<script>"https://cdn.tailwindcss.com"></script>`. The address was text inside the script, not the tag's `src`, so Tailwind never loaded. The page uses 25 Tailwind classes and scrolled sideways on a 390-pixel screen. The sibling page, `projects-ai-headline-hero.html`, has the correct tag.
+- **Decision:** Change line 7 to `<script src="https://cdn.tailwindcss.com"></script>`. No other line changed.
+- **Verification:** Tested on a scratch copy before the repo changed. Tailwind loaded, the sideways scroll went away, and the accessibility scan found 0 violations.
+- **Consequences:** The page now looks the way its author intended, which is a visible change. Both game pages still depend on Tailwind's CDN, which loads the library from the internet on every visit. Self-hosting a built stylesheet would remove that dependency. It is not done.
+
+### D27: Code blocks wrap long lines
+
+- **Date:** 2026-11-04
+- **Status:** Decided
+- **Context:** A folder-tree code block in the published downloads README made that page scroll sideways on phones. The README must not be changed.
+- **Decision:** Style `pre` blocks in `_sass/_base.scss` to wrap long lines. A scrolling code block would need to be keyboard-focusable, which cannot be added to HTML that Jekyll generates from a README.
+
 ---
 
 ## Open decisions
