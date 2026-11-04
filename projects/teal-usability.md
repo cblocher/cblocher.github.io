@@ -32,7 +32,7 @@ As “customer zero”, I engaged in a workflow testing process to assess the ef
 
 ## Capture
 
-I collected feedback over the course of three months regarding the usability and overall experiences with the browser extension and their website, identifying both issues and areas for improvement.
+I collected feedback over the course of one week regarding the usability and overall experiences with the browser extension and their website, identifying both issues and areas for improvement.
 
 {% include figure.html src="/assets/images/projects/teal-usability/snagit-capture.webp" alt="The Snagit editor with a job description marked up: highlighted terms, a circled word, and red callouts. One callout reads, “Tool labels sentence case v. tool labels Title Case?”" caption="Snagit does a great job of capturing workflow testing results." %}
 

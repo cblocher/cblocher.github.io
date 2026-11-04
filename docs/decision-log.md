@@ -255,19 +255,26 @@ This file is not published. `_config.yml` excludes the `docs` folder.
 - **Recovery:** Everything removed stays on `main` and in git history (commit `eccaa6d`), and the 30 images are in the zip Chris downloaded.
 - **Kept:** `_originals/` (full-size images and the manifest), and `assets/downloads/`, which was not touched.
 
+### D29: The Teal Capture sentence says "one week"
+
+- **Date:** 2026-11-04
+- **Status:** Decided; applied on the branch
+- **Context:** After D20 set the Teal timeline to "1 week," the Capture section still said feedback was collected "over the course of three months."
+- **Decision:** Change the phrase to "over the course of one week," as Chris directed, so the page agrees with itself. Chris's wording is lowercase mid-sentence here ("over the course of one week").
+- **Consequences:** UXfolio still says "3 months" in the facts row and "three months" in this sentence, and UXfolio is the source of truth under D23. Chris needs to make both edits there, or the next sync would undo them.
+
 ---
 
 ## Open decisions
 
 | Item | State |
 |------|-------|
-| Where the Teal "three months" sentence should land | Waiting for Chris |
 | Add a carousel for the prototype slides | Optional, after the content is done |
 | Self-host the Google Fonts instead of loading them from Google | Not decided. The fonts are requested from a third party on every page |
 | A public accessibility statement page | Planned for the documentation phase |
 | Whether to delete the branch `claude/case-study-fixes` | Waiting for Chris |
 | Check the Figma embed and the YouTube video in a real browser | After merge |
-| Make the same typo and wording fixes on UXfolio (the six in the phase 4 review sheet, and the three Chris made) | Waiting for Chris |
+| Make the same typo and wording fixes on UXfolio (the six in the phase 4 review sheet, and the four Chris made: the Teal facts row and Capture sentence, the game card time, and "embracing opportunities") | Waiting for Chris |
 | Fix the likely broken LinkedIn address in UXfolio's footer (`linkedin.com/cblocher` has no `/in/`) | Waiting for Chris |
 | Fix the five `.md` file names that UXfolio turned into web links on the AI skill page | Waiting for Chris |
 | Remove the allowed domains added for this work (`uxfol.io`, `cblocher.github.io`, the Figma hosts, `cdn.tailwindcss.com`) | Waiting for Chris, after the site is merged |
