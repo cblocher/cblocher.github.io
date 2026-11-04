@@ -68,3 +68,9 @@ Pages at the source: [ai-skill](https://uxfol.io/p/5a5a1147/ace10a4d), [digital-
 | Original | Size | Role | UXfolio file | Web copy |
 |----------|------|------|--------------|----------|
 | `thumbnail-source.png` | 1422x888 | thumbnail source | `ZtoVuLuF8wL2EJls.C` | none (source for a thumbnail) |
+
+---
+
+## Thumbnails
+
+Each project has `assets/images/projects/<project>/thumbnail.webp`, 800 x 600 pixels (4:3). It is built from that project's `thumbnail-source` file, with the whole screen fitted inside the frame on the page background color (`#F3F4F6`) and about 6 percent of space around it. Nothing is cropped. The 1px border comes from the stylesheet, not from the image.
