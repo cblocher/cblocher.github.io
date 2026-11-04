@@ -6,6 +6,23 @@ This file is not published. `_config.yml` excludes it.
 
 ---
 
+## 2026-11-04, third entry
+
+### Verified
+
+- The Figma frame on the Teal page displays and the YouTube video on the AI skill page plays, checked by the site owner in a normal browser.
+- The sitemap, `robots.txt`, and the custom 404 page work on the live site.
+
+### Corrected
+
+- The documentation said the embeds were unverified and listed branch cleanup as open. Both are now resolved. Earlier entries are unchanged. See decision D34.
+
+### Removed
+
+- All old branches on GitHub. `main` is the only branch.
+
+---
+
 ## 2026-11-04, second entry
 
 ### Added

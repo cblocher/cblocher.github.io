@@ -12,7 +12,7 @@ Last reviewed: 2026-11-04.
 |----------|----------------|--------------|
 | `architecture.md` | How the site is built and published | You want to know how a change becomes a live page |
 | `tech-stack.md` | Each technology choice, the alternatives, and the reasons | You are asking "why was it done this way?" |
-| `decision-log.md` | Every decision made during the rebuild, in order, with its reasoning (D01 to D33) | You need the full story behind one choice |
+| `decision-log.md` | Every decision made during the rebuild, in order, with its reasoning (D01 to D34) | You need the full story behind one choice |
 | `design-system.md` | Colors, type, spacing, components, and contrast numbers | You are changing how the site looks |
 | `accessibility.md` | What is built in, what has been tested, and what has not | You are checking or improving accessibility |
 | `content-guide.md` | How to add or change pages, images, and text | You are editing content |

@@ -300,6 +300,16 @@ This file is not published. `_config.yml` excludes the `docs` folder.
 - **Details:** The sitemap lists the nine real pages and leaves out the redirect stubs and the 404 page. In a local build its addresses are relative, because GitHub adds the site address only in its own build. This is to be checked on the live site after merging. `.gitignore` ignores every `.txt` file, so `robots.txt` was added with `git add -f`.
 - **Checks:** The 404 page has 0 violations on both the WCAG rules and the best-practice rules, with no sideways scrolling at 390 pixels.
 
+### D34: Embeds verified by the owner, and the live deploy of D33 checked
+
+- **Date:** 2026-11-04
+- **Status:** Decided; applied on the branch `claude/docs-verified-update`
+- **Context:** D17 said the Figma frame and the YouTube video were not verified, because the build environment could not load them.
+- **Result:** Chris confirmed in his own browser that the Figma frame on `/projects/teal-usability/` displays and the YouTube video on `/projects/ai-skill/` plays. D17 stays as written, since the log is append-only. This entry supersedes its "not verified" status.
+- **Also verified on the live site:** `/sitemap.xml` returns 200 with nine absolute addresses, `/robots.txt` returns 200, a made-up address shows the new "Page not found" page with a 404 status, and the About page's canonical address (`/about.html`) matches its sitemap entry. `main` is the only branch, and no pull requests are open.
+- **Still not examined:** the cookie behavior of the YouTube video, and keyboard use inside both frames.
+- **Documents updated:** `docs/known-issues.md`, `docs/accessibility.md`, `docs/privacy-and-third-parties.md`, and `docs/tech-stack.md`.
+
 ---
 
 ## Open decisions
@@ -308,9 +318,8 @@ This file is not published. `_config.yml` excludes the `docs` folder.
 |------|-------|
 | Add a carousel for the prototype slides | Optional, after the content is done |
 | Self-host the Google Fonts instead of loading them from Google | Not decided. The fonts are requested from a third party on every page |
-| A public accessibility statement page | Planned for the documentation phase |
-| Whether to delete the branch `claude/case-study-fixes` | Waiting for Chris |
-| Check the Figma embed and the YouTube video in a real browser | After merge |
+| A public accessibility statement page | Waiting for Chris's approval of the text |
 | Fix the likely broken LinkedIn address in UXfolio's footer (`linkedin.com/cblocher` has no `/in/`) | Waiting for Chris |
 | Fix the five `.md` file names that UXfolio turned into web links on the AI skill page | Waiting for Chris |
 | Remove the allowed domains added for this work (`uxfol.io`, `cblocher.github.io`, the Figma hosts, `cdn.tailwindcss.com`) | Waiting for Chris, after the site is merged |
+| Turn on "Automatically delete head branches" in the repo settings | Waiting for Chris |

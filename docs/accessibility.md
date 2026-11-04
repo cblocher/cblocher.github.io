@@ -51,7 +51,7 @@ Automated tools find only a part of the possible problems. A clean scan does not
 - **Zoom and reflow.** Not checked at 200 percent and 400 percent zoom.
 - **Voice control, switch devices, and screen magnifiers.**
 - **Color blindness simulation.** Color is never the only cue, but this was not simulated.
-- **The Figma and YouTube embeds.** They could not be loaded in the build environment, so their keyboard behavior was not checked.
+- **Keyboard use inside the Figma and YouTube frames.** Both were confirmed to display and play in a normal browser on 2026-11-04, but no one checked keyboard use inside them.
 - **The game pages' own interaction.** Only the automated rules were run.
 
 ---
