@@ -1,0 +1,12 @@
+<header class="site-header">
+  <div class="inner site-header__inner">
+    <a class="site-logo" href="{{ '/' | relative_url }}">cblocher.</a>
+    <nav aria-label="Main">
+      <ul class="site-nav">
+        <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a></li>
+        <li><a href="{{ '/about' | relative_url }}"{% if page.url contains '/about' %} aria-current="page"{% endif %}>About</a></li>
+        <li><a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

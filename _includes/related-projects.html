@@ -1,0 +1,19 @@
+{% assign case_studies = site.pages | where_exp: "p", "p.path contains 'projects/'" | where_exp: "p", "p.url != page.url" | sort: "order" %}
+{% if case_studies.size > 0 %}
+<nav class="related-projects" aria-labelledby="related-projects-heading">
+  <h2 id="related-projects-heading">Read More of My Case Studies</h2>
+  <ul class="projects-grid">
+    {% for study in case_studies %}
+    <li>
+      <a class="project-card" href="{{ study.url | relative_url }}">
+        {% if study.thumbnail %}
+        <span class="project-thumb"><img src="{{ study.thumbnail | relative_url }}" alt="" loading="lazy" decoding="async"></span>
+        {% endif %}
+        <span class="project-card__title">{{ study.card_title | default: study.title }}</span>
+        <span class="project-card__text">{{ study.summary }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}

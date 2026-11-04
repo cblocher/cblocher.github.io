@@ -1,0 +1,112 @@
+// Case study pages (layout: project).
+
+.project {
+  max-width: var(--container-width-narrow);
+  margin: 0 auto;
+}
+
+.project__header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.project__title {
+  margin-bottom: var(--space-md);
+}
+
+.project__summary {
+  font-size: 1.25rem;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.project__hero {
+  margin: 0 0 var(--space-xl);
+}
+
+.project__hero img {
+  width: 100%;
+  border: 1px solid var(--border);
+}
+
+// Team, role, timeline, tools.
+.project__facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.project__fact dt {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.project__fact dd {
+  color: var(--text-secondary);
+}
+
+// Body text. The first heading level inside a project body is H2.
+.project__body {
+  h2 {
+    text-align: left;
+    font-size: 2rem;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+  }
+
+  h3 {
+    text-align: left;
+    margin-top: var(--space-lg);
+  }
+}
+
+// Images with captions.
+.figure,
+.embed {
+  margin: var(--space-xl) 0;
+}
+
+.figure img {
+  margin: 0 auto;
+  border: 1px solid var(--border);
+}
+
+.figure figcaption,
+.embed figcaption {
+  margin-top: var(--space-sm);
+  font-size: 0.95rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+// Embedded frames, such as the Figma file. 16:9 on desktop, taller on phones.
+.embed__frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+
+.embed__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 480px) {
+  .embed__frame {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+// "Read More of My Case Studies" at the end of a project.
+.related-projects {
+  margin-top: var(--space-xxl);
+}

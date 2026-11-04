@@ -1,0 +1,193 @@
+// About page: two columns, role cards, certifications, quote carousel, mentorship widget.
+// Ported unchanged in layout from the previous stylesheet. This page is rebuilt in phase 4.
+
+.about-layout {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: flex-start;
+}
+
+.about-image {
+  flex: 0 0 350px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-lg);
+}
+
+.mentorship-section {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--border);
+}
+
+.widget-wrapper {
+  margin-top: var(--space-md);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .about-layout {
+    flex-direction: column;
+  }
+
+  .about-image {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-bottom: var(--space-lg);
+  }
+}
+
+// Role cards
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+  margin: var(--space-xl) 0;
+}
+
+.role-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: var(--space-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.role-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+  text-align: left;
+}
+
+.role-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+// Quote carousel
+.quote-carousel-wrapper {
+  margin: var(--space-xxl) 0;
+}
+
+.quote-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: var(--space-md);
+  padding-bottom: var(--space-md);
+  scrollbar-width: none;
+}
+
+.quote-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.quote-card {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  text-align: center;
+  padding: 0 var(--space-lg);
+}
+
+.quote-card p {
+  font-size: 1.75rem;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+  line-height: 1.4;
+}
+
+.quote-card footer {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: var(--space-md);
+}
+
+.carousel-nav .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--border);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.carousel-nav .dot.active {
+  background-color: var(--text-primary);
+}
+
+// Certifications
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-lg);
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: var(--text-primary);
+  height: 100%;
+}
+
+.cert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  color: var(--text-primary);
+}
+
+.cert-card img {
+  height: 60px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  margin-bottom: var(--space-md);
+}
+
+.cert-card .cert-title {
+  font-weight: 600;
+  font-family: var(--font-heading);
+  margin-bottom: var(--space-sm);
+  display: block;
+  font-size: 1.1rem;
+}
+
+.cert-card .cert-link-text {
+  font-size: 0.9rem;
+  color: var(--link-color);
+  font-weight: 600;
+}
