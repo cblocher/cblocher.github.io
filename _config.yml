@@ -2,6 +2,10 @@
 title: Chris Blocher | Technical Writer & Mentor
 description: I specialize in creating clear, engaging, and user-centric content experiences. With a passion for accessible design and strategic storytelling.
 lang: en-US
+
+# No theme. This site has its own layouts and styles. Without this line, the GitHub Pages
+# toolchain adds a default theme (Primer) and publishes its stylesheet, which nothing here uses.
+theme: null
 linkedin: "https://www.linkedin.com/in/chrisblocher"
 
 # Plugins that GitHub Pages supports.
@@ -29,6 +33,3 @@ exclude:
   - docs
   - _originals
   - _vale
-  # Temporary: the old stylesheet source imports the Primer theme, which this file no longer sets.
-  # It is removed in phase 5, after the new site is reviewed. Then delete this line.
-  - assets/css/style.scss
