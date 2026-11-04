@@ -244,6 +244,17 @@ This file is not published. `_config.yml` excludes the `docs` folder.
 - **Context:** A folder-tree code block in the published downloads README made that page scroll sideways on phones. The README must not be changed.
 - **Decision:** Style `pre` blocks in `_sass/_base.scss` to wrap long lines. A scrolling code block would need to be keyboard-focusable, which cannot be added to HTML that Jekyll generates from a README.
 
+### D28: Remove the old files, and turn the default theme off
+
+- **Date:** 2026-11-04
+- **Status:** Decided; applied on the branch
+- **Context:** Four groups of old files were left after the rebuild: the four old project pages, the old stylesheets, two unused includes, and 30 unused images (2.6 MB).
+- **Decision:** Delete all four groups, each after Chris's confirmation. The old project pages are replaced by redirects for their `.html` and folder-form addresses. Set `theme: null` in `_config.yml`.
+- **Why `theme: null`:** The GitHub Pages toolchain adds its default theme (Primer) when none is set, and published its 136 KB stylesheet at `/assets/css/style.css` once the old file was deleted. Nothing uses it. Setting the theme to null leaves `main.css` as the only stylesheet.
+- **Checks after removal:** 140 internal references and none broken, 0 accessibility violations on all 10 pages, no sideways scrolling at 390 pixels, and Vale clean on all 11 of the site's own Markdown files.
+- **Recovery:** Everything removed stays on `main` and in git history (commit `eccaa6d`), and the 30 images are in the zip Chris downloaded.
+- **Kept:** `_originals/` (full-size images and the manifest), and `assets/downloads/`, which was not touched.
+
 ---
 
 ## Open decisions
@@ -255,5 +266,8 @@ This file is not published. `_config.yml` excludes the `docs` folder.
 | Self-host the Google Fonts instead of loading them from Google | Not decided. The fonts are requested from a third party on every page |
 | A public accessibility statement page | Planned for the documentation phase |
 | Whether to delete the branch `claude/case-study-fixes` | Waiting for Chris |
-| Remove the old stylesheet, old includes, and old project pages | Phase 5, with confirmation for each |
 | Check the Figma embed and the YouTube video in a real browser | After merge |
+| Make the same typo and wording fixes on UXfolio (the six in the phase 4 review sheet, and the three Chris made) | Waiting for Chris |
+| Fix the likely broken LinkedIn address in UXfolio's footer (`linkedin.com/cblocher` has no `/in/`) | Waiting for Chris |
+| Fix the five `.md` file names that UXfolio turned into web links on the AI skill page | Waiting for Chris |
+| Remove the allowed domains added for this work (`uxfol.io`, `cblocher.github.io`, the Figma hosts, `cdn.tailwindcss.com`) | Waiting for Chris, after the site is merged |
