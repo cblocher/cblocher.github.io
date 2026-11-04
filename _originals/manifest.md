@@ -74,3 +74,22 @@ Pages at the source: [ai-skill](https://uxfol.io/p/5a5a1147/ace10a4d), [digital-
 ## Thumbnails
 
 Each project has `assets/images/projects/<project>/thumbnail.webp`, 800 x 600 pixels (4:3). It is built from that project's `thumbnail-source` file, with the whole screen fitted inside the frame on the page background color (`#F3F4F6`) and about 6 percent of space around it. Nothing is cropped. The 1px border comes from the stylesheet, not from the image.
+
+---
+
+## About page
+
+Pages at the source: [about](https://uxfol.io/p/5a5a1147/about)
+
+| Original | Size | Role | UXfolio file | Web copy |
+|----------|------|------|--------------|----------|
+| `_originals/about/headshot.webp` | 1024x1024 | headshot | `8XhyG68KVCbFooyZ.webp` | `assets/images/about/headshot.webp` (1024x1024, copied unchanged) |
+| `_originals/about/hobbies-meta-quest.webp` | 1218x658 | figure | `5jzCWTQIsOYVEA4o.webp` | `assets/images/about/hobbies-meta-quest.webp` (1218x658, copied unchanged) |
+| `_originals/about/role-technical-writer.webp` | 3000x2000 | role card | `ZKEL6059C4S2Dep4.webp` | `assets/images/roles/technical-writer.webp` (1200x800, resized) |
+| `_originals/about/role-content-designer.webp` | 3000x2000 | role card | `aeaM5MV9undPvPKx.webp` | `assets/images/roles/content-designer.webp` (1200x800, resized) |
+| `_originals/about/role-content-strategist.webp` | 3000x2000 | role card | `zBxcallv1UDVGrHO.webp` | `assets/images/roles/content-strategist.webp` (1200x800, resized) |
+| `_originals/about/role-instructional-designer.webp` | 3000x2000 | role card | `0FqkpbYjKMZRIBpJ.webp` | `assets/images/roles/instructional-designer.webp` (1200x800, resized) |
+| `_originals/about/cert-google-ai.png` | 220x202 | certification | `m7u7g5dDoergNqQU.png` | `assets/images/certs/google-ai.png` (220x202, copied unchanged) |
+| `_originals/about/cert-5-moments.png` | 1896x1888 | certification | `8LIKLTe3cbxCcmr6.png` | `assets/images/certs/5-moments.webp` (600x597, resized) |
+| `_originals/about/cert-pendo.png` | 680x680 | certification | `tWcRDsAKrj2epBay.png` | `assets/images/certs/pendo.png` (680x680, copied unchanged) |
+| `_originals/about/cert-atd.png` | 600x600 | certification | `fwyqndg56WmGUn9p.png` | `assets/images/certs/atd.png` (600x600, copied unchanged) |
