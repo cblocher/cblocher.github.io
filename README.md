@@ -6,7 +6,7 @@ The full portfolio also lives on UXfolio at https://uxfol.io/5a5a1147. This site
 
 ---
 
-## Folder Map
+## Folder map
 
 ```
 cblocher.github.io/
@@ -28,6 +28,9 @@ cblocher.github.io/
 │   ├── images/            Web-ready images, grouped by where they appear
 │   └── downloads/         Published files. Do not change anything here.
 ├── _originals/            Full-size source images. Never edited, never published.
+├── _vale/                 Writing-check rules (see Writing checks below)
+├── .vale.ini              Writing-check settings
+├── docs/                  Learning guide for GitHub, Jekyll, and Vale. Not published.
 ├── index.md               Home page
 ├── about.md               About page
 └── projects/              One file per case study
@@ -37,7 +40,7 @@ Two game demos, `projects-doc-quest.html` and `projects-ai-headline-hero.html`, 
 
 ---
 
-## How to Add a Project
+## How to add a project
 
 1. Put the full-size images in `_originals/<project>/`.
 2. Make web copies (about 2000 pixels wide at most) in `assets/images/projects/<project>/`. Add a 4:3 thumbnail named `thumbnail.webp`, 800 x 600 pixels.
@@ -54,13 +57,19 @@ Two game demos, `projects-doc-quest.html` and `projects-ai-headline-hero.html`, 
 
 ---
 
-## Rules That Keep the Site Healthy
+## Rules that keep the site healthy
 
 - **No inline styles.** Never write `style="..."` in a page. Add a class and style it in `_sass/`.
 - **Alt text on every image.** Use `alt=""` only for a picture that adds nothing the text does not say.
 - **One H1 per page.** The layout writes it from `title`. Body headings start at H2 and never skip a level.
 - **Keep old addresses alive.** When a page moves, list the old address under `redirect_from` in its settings.
 - **Do not change `assets/downloads/`.** It holds the README for the published skill.
+
+---
+
+## Writing checks
+
+Vale checks that headings use sentence case. The settings are in `.vale.ini` and `_vale/styles/Site/Headings.yml`. Run `vale projects/` from the top folder. For how it works, and for a guide to GitHub and Jekyll, read `docs/learning-the-tools.md`.
 
 ---
 

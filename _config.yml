@@ -26,7 +26,9 @@ defaults:
 # _originals holds full-size source images and is never edited in place.
 exclude:
   - README.md
+  - docs
   - _originals
+  - _vale
   # Temporary: the old stylesheet source imports the Primer theme, which this file no longer sets.
   # It is removed in phase 5, after the new site is reviewed. Then delete this line.
   - assets/css/style.scss

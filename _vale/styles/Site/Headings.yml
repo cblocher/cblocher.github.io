@@ -1,0 +1,34 @@
+extends: capitalization
+message: "'%s' should use sentence-style capitalization."
+level: warning
+scope: heading
+match: $sentence
+indicators:
+  - ':'
+# Words that keep their capital letters in the middle of a heading: names, brands, and acronyms.
+# Add a word here when Vale flags something that is correct.
+exceptions:
+  - I
+  - AI
+  - API
+  - APIs
+  - Anthropic
+  - CMS
+  - cblocher.github.io
+  - Claude
+  - DITA
+  - Figma
+  - Fusion
+  - Gemini
+  - GitHub
+  - HTML
+  - Jekyll
+  - JSON
+  - LinkedIn
+  - Mural
+  - RAG
+  - Snagit
+  - Teal
+  - Vale
+  - WCAG
+  - YouTube
