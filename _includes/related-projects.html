@@ -10,7 +10,7 @@
         <span class="project-thumb"><img src="{{ study.thumbnail | relative_url }}" alt="" loading="lazy" decoding="async"></span>
         {% endif %}
         <span class="project-card__title">{{ study.card_title | default: study.title }}</span>
-        <span class="project-card__text">{{ study.summary }}</span>
+        <span class="project-card__text">{{ study.card_summary | default: study.summary }}</span>
       </a>
     </li>
     {% endfor %}

@@ -20,6 +20,7 @@ defaults:
       path: "projects"
     values:
       layout: project
+      permalink: /projects/:basename/
 
 # Files that are in the repository but must not be published.
 # _originals holds full-size source images and is never edited in place.

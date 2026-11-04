@@ -1,0 +1,20 @@
+{%- comment -%}
+  A numbered series of images, stacked in order. Set them in the page settings:
+  slides:
+    - src: /assets/images/projects/digital-coach/prototype-1.webp
+      alt: "What the slide shows"
+      caption: "Short caption"
+  Usage in the page body: {% include slides.html label="Prototype slides" %}
+{%- endcomment -%}
+{% if page.slides %}
+<ol class="slides" aria-label="{{ include.label | default: 'Slides' }}">
+  {% for slide in page.slides %}
+  <li>
+    <figure>
+      <img src="{{ slide.src | relative_url }}" alt="{{ slide.alt }}" loading="lazy" decoding="async">
+      <figcaption><span class="slide-count">Slide {{ forloop.index }} of {{ forloop.length }}</span>{{ slide.caption }}</figcaption>
+    </figure>
+  </li>
+  {% endfor %}
+</ol>
+{% endif %}
