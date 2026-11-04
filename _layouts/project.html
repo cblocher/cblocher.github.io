@@ -1,0 +1,49 @@
+---
+layout: default
+---
+<article class="project">
+  <header class="project__header">
+    <h1 class="project__title">{{ page.title }}</h1>
+    {% if page.summary %}<p class="project__summary">{{ page.summary }}</p>{% endif %}
+  </header>
+
+  {% if page.hero %}
+  <figure class="project__hero{% if page.hero.shape == 'portrait' %} project__hero--portrait{% endif %}">
+    <img src="{{ page.hero.src | relative_url }}" alt="{{ page.hero.alt }}" decoding="async">
+  </figure>
+  {% endif %}
+
+  {% if page.overview %}
+  <div class="project__overview">
+    <section>
+      <h2>Overview</h2>
+      {{ page.overview | markdownify }}
+    </section>
+    <section>
+      <h2>Goal</h2>
+      {{ page.goal | markdownify }}
+    </section>
+    <section>
+      <h2>Results</h2>
+      {{ page.results | markdownify }}
+    </section>
+  </div>
+  {% endif %}
+
+  {% if page.facts %}
+  <dl class="project__facts">
+    {% for fact in page.facts %}
+    <div class="project__fact">
+      <dt>{{ fact[0] }}</dt>
+      <dd>{{ fact[1] }}</dd>
+    </div>
+    {% endfor %}
+  </dl>
+  {% endif %}
+
+  <div class="project__body">
+    {{ content }}
+  </div>
+
+  {% include related-projects.html %}
+</article>

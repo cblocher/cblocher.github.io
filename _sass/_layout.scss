@@ -1,0 +1,109 @@
+// Containers, header, navigation, footer.
+
+.inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.inner-narrow {
+  max-width: var(--container-width-narrow);
+  margin: 0 auto;
+}
+
+.site-main {
+  min-height: calc(100vh - 200px);
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xxl);
+}
+
+// Header
+.site-header {
+  padding: var(--space-xl) 0;
+}
+
+.site-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// The red logo box.
+.site-logo {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 8px 16px;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.site-logo:hover {
+  background-color: var(--accent-hover);
+  color: #FFFFFF;
+}
+
+// Navigation
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav li + li {
+  margin-top: 0;
+}
+
+.site-nav a {
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+.site-nav--center {
+  justify-content: center;
+}
+
+// Footer
+.site-footer {
+  padding: var(--space-xl) 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.footer-heading {
+  margin-bottom: var(--space-xl);
+}
+
+// Phone widths: let the logo and navigation wrap instead of overflowing.
+@media (max-width: 480px) {
+  .site-header__inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+  }
+
+  .inner {
+    padding: 0 var(--space-md);
+  }
+}

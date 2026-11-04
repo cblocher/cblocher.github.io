@@ -1,0 +1,16 @@
+{%- comment -%}
+  Big numbers for a project. Set them in the page settings:
+  stats:
+    - value: "80%+"
+      label: "Faster time to answer"
+{%- endcomment -%}
+{% if page.stats %}
+<ul class="stats">
+  {% for stat in page.stats %}
+  <li class="stat">
+    <span class="stat__value">{{ stat.value }}</span>
+    <span class="stat__label">{{ stat.label }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}

@@ -1,0 +1,196 @@
+// About page: headshot and intro, role cards, hobbies, testimonials, certifications.
+
+// Headshot beside the intro text.
+.about-layout {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: flex-start;
+}
+
+.about-image {
+  flex: 0 0 350px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .about-layout {
+    flex-direction: column;
+  }
+
+  .about-image {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: var(--space-lg);
+  }
+}
+
+// Role cards
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+  list-style: none;
+  padding: 0;
+  margin: var(--space-xl) 0;
+}
+
+.role-grid > li + li {
+  margin-top: 0;
+}
+
+.role-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: var(--space-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.role-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+  text-align: left;
+}
+
+.role-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+// "When not untying content knots..." section
+.about-hobbies {
+  margin: var(--space-xl) auto;
+  max-width: var(--container-width-narrow);
+}
+
+.about-hobbies h2 {
+  text-align: left;
+  font-size: 2rem;
+}
+
+// Testimonials, as a plain list
+.quotes {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-xl) auto;
+  max-width: var(--container-width-narrow);
+}
+
+.quotes > li {
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--border);
+}
+
+.quotes > li + li {
+  margin-top: 0;
+}
+
+.quotes > li:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.quote {
+  margin: 0;
+  text-align: center;
+}
+
+.quote blockquote {
+  margin: 0;
+}
+
+.quote blockquote p {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.quote figcaption {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+  .quote blockquote p {
+    font-size: 1.25rem;
+  }
+}
+
+// Certifications
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-xl);
+}
+
+.cert-grid > li + li {
+  margin-top: 0;
+}
+
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-lg);
+  height: 100%;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.cert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  color: var(--text-primary);
+}
+
+.cert-card img {
+  height: 60px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  margin-bottom: var(--space-md);
+}
+
+.cert-title {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.cert-link-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--link-color);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}

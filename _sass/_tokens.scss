@@ -1,0 +1,41 @@
+// Design tokens. Change a color, font, or space here and it changes everywhere.
+// Text colors were checked against the page background (#F3F4F6) for WCAG AA contrast (4.5 to 1 for body text).
+
+:root {
+  // Colors
+  --bg-primary: #F3F4F6;
+  --bg-secondary: #FFFFFF;
+  --border: #D1D5DB;
+
+  --text-primary: #1A1A1A;
+  --text-secondary: #595959;
+
+  --accent-color: #D32F2F;
+  --accent-hover: #B71C1C;
+
+  // Link blue darkened from #3B82F6 (about 3.4 to 1 on the page background) so link text passes AA.
+  --link-color: #1D4ED8;
+  --link-hover: #1E3A8A;
+
+  // Typography
+  --font-heading: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-body: 'Lora', Georgia, serif;
+
+  // Heading capitalization. Headings are typed in sentence case in the Markdown files, and
+  // this is set to "none" so they show as typed. It is a display setting only: it does not
+  // change what screen readers read, the browser tab title, or link previews.
+  // Other values: "capitalize" (first letter of every word, small words included),
+  // "uppercase", or "lowercase". There is no CSS value for true Title Case or sentence case.
+  --heading-case: none;
+
+  // Spacing
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+  --space-xxl: 8rem;
+
+  // Widths
+  --container-width: 1000px;
+  --container-width-narrow: 800px;
+}

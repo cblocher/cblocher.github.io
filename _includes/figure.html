@@ -1,0 +1,8 @@
+{%- comment -%}
+  Usage: {% include figure.html src="/assets/images/projects/teal/workflow.webp" alt="Describe what the image shows" caption="Optional caption" %}
+  The alt text is required. Use alt="" only for a picture that adds nothing the text does not already say.
+{%- endcomment -%}
+<figure class="figure">
+  <img src="{{ include.src | relative_url }}" alt="{{ include.alt }}" loading="lazy" decoding="async">
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>

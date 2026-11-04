@@ -1,0 +1,28 @@
+{%- comment -%}
+  The grid of case study cards, used on the home page and in the "Read more" list.
+  Cards come from every page in projects/, sorted by `order`, followed by the "Coming soon..." card.
+  Optional: exclude="/projects/teal-usability/" leaves one project out (the page you are on).
+{%- endcomment -%}
+{% assign studies = site.pages | where_exp: "p", "p.path contains 'projects/'" | sort: "order" %}
+<ul class="projects-grid">
+  {% for study in studies %}
+  {% unless study.url == include.exclude %}
+  <li>
+    <a class="project-card" href="{{ study.url | relative_url }}">
+      <span class="project-thumb"><img src="{{ study.thumbnail | relative_url }}" alt="" loading="lazy" decoding="async"></span>
+      <span class="project-card__title">{{ study.card_title | default: study.title }}</span>
+      <span class="project-card__text">{{ study.card_summary | default: study.summary }}</span>
+    </a>
+  </li>
+  {% endunless %}
+  {% endfor %}
+  {% if site.data.coming_soon %}
+  <li>
+    <div class="project-card project-card--soon">
+      <span class="project-thumb"><img src="{{ site.data.coming_soon.thumbnail | relative_url }}" alt="" loading="lazy" decoding="async"></span>
+      <span class="project-card__title">{{ site.data.coming_soon.title }}</span>
+      <span class="project-card__text">{{ site.data.coming_soon.text }}</span>
+    </div>
+  </li>
+  {% endif %}
+</ul>

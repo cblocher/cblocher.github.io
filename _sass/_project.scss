@@ -1,0 +1,234 @@
+// Case study pages (layout: project).
+
+// The page is as wide as the site container. Reading text stays in a narrower column;
+// the hero, facts, and embeds use the full width, as they do on UXfolio.
+.project {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.project__header,
+.project__body > p,
+.project__body > h2,
+.project__body > h3,
+.project__body > h4,
+.project__body > ul,
+.project__body > ol,
+.project__body > .figure {
+  max-width: var(--container-width-narrow);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project__header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.project__title {
+  margin-bottom: var(--space-md);
+}
+
+.project__summary {
+  font-size: 1.25rem;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.project__hero {
+  margin: 0 0 var(--space-xl);
+}
+
+.project__hero img {
+  width: 100%;
+  border: 1px solid var(--border);
+}
+
+// Team, role, timeline, tools.
+.project__facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.project__fact dt {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.project__fact dd {
+  color: var(--text-secondary);
+}
+
+// Body text. The first heading level inside a project body is H2.
+.project__body {
+  h2 {
+    text-align: left;
+    font-size: 2rem;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+  }
+
+  h3 {
+    text-align: left;
+    margin-top: var(--space-lg);
+  }
+}
+
+// Images with captions.
+.figure,
+.embed {
+  margin: var(--space-xl) 0;
+}
+
+.figure img {
+  margin: 0 auto;
+  border: 1px solid var(--border);
+}
+
+.figure figcaption,
+.embed figcaption {
+  margin-top: var(--space-sm);
+  font-size: 0.95rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+// Embedded frames, such as the Figma file. 16:9 like the UXfolio version, with no border.
+// On phones the frame gets taller so the content stays usable.
+.embed__frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-secondary);
+}
+
+.embed__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 480px) {
+  .embed__frame {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+// "Read More of My Case Studies" at the end of a project.
+.related-projects {
+  margin-top: var(--space-xxl);
+}
+
+// Overview, Goal, and Results in three columns.
+.project__overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: var(--space-sm);
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+}
+
+// A tall image (such as a side panel) is kept to a sensible size and centered.
+.project__hero--portrait img {
+  width: auto;
+  max-height: 640px;
+  margin: 0 auto;
+}
+
+// Big numbers.
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+  list-style: none;
+  padding: 0;
+  margin: var(--space-xl) auto;
+  text-align: center;
+}
+
+.stats > li + li {
+  margin-top: 0;
+}
+
+.stat__value {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.stat__label {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+// A numbered series of images, stacked in order.
+.slides {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-xl) 0;
+}
+
+.slides > li + li {
+  margin-top: var(--space-xl);
+}
+
+.slides figure {
+  margin: 0;
+}
+
+.slides img {
+  width: 100%;
+  border: 1px solid var(--border);
+}
+
+.slides figcaption {
+  margin-top: var(--space-sm);
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.slide-count {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+// Explicit widths for lists inside a project body; headings and text keep the narrow column.
+.project__body > .stats,
+.project__body > .slides {
+  max-width: var(--container-width-narrow);
+}
+
+.project__body > .slides {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project__body .stats {
+  max-width: var(--container-width);
+}

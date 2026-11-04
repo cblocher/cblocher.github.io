@@ -1,5 +1,35 @@
+# Site settings. Change the title, description, or LinkedIn address here.
 title: Chris Blocher | Technical Writer & Mentor
 description: I specialize in creating clear, engaging, and user-centric content experiences. With a passion for accessible design and strategic storytelling.
-show_downloads: false 
-theme: jekyll-theme-primer
+lang: en-US
+
+# No theme. This site has its own layouts and styles. Without this line, the GitHub Pages
+# toolchain adds a default theme (Primer) and publishes its stylesheet, which nothing here uses.
+theme: null
 linkedin: "https://www.linkedin.com/in/chrisblocher"
+
+# Plugins that GitHub Pages supports.
+# redirect-from keeps old addresses working. seo-tag writes the page title and sharing tags.
+plugins:
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+
+# Layouts are chosen here so pages do not each need a layout line.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: "projects"
+    values:
+      layout: project
+      permalink: /projects/:basename/
+
+# Files that are in the repository but must not be published.
+# _originals holds full-size source images and is never edited in place.
+exclude:
+  - README.md
+  - docs
+  - _originals
+  - _vale

@@ -1,0 +1,13 @@
+{%- comment -%}
+  Usage: {% include embed.html src="https://embed.figma.com/..." link="https://www.figma.com/..." title="What the embed shows" caption="Optional caption" %}
+  The title is required, because screen readers announce it. A plain link follows the frame in case the embed does not load.
+  The link is optional. Without it, the link uses the embed address.
+{%- endcomment -%}
+<figure class="embed">
+  <div class="embed__frame">
+    <iframe src="{{ include.src }}" title="{{ include.title }}" loading="lazy" allowfullscreen></iframe>
+  </div>
+  <figcaption>
+    {% if include.caption %}{{ include.caption }} {% endif %}<a href="{{ include.link | default: include.src }}" target="_blank" rel="noopener">Open in a new tab<span class="visually-hidden">: {{ include.title }}</span></a>
+  </figcaption>
+</figure>

@@ -1,0 +1,22 @@
+{%- comment -%}
+  The certification and membership cards on the About page. Set them in the page settings:
+  certs:
+    - title: "Google AI Professional"
+      link_text: "Program"
+      url: https://www.coursera.org/professional-certificates/google-ai
+      image: /assets/images/certs/google-ai.png
+  The badge is decorative, because the title beside it says what it is, so its alt text is empty.
+{%- endcomment -%}
+{% if page.certs %}
+<ul class="cert-grid">
+  {% for cert in page.certs %}
+  <li>
+    <a class="cert-card" href="{{ cert.url }}" target="_blank" rel="noopener">
+      <img src="{{ cert.image | relative_url }}" alt="" loading="lazy" decoding="async">
+      <span class="cert-title">{{ cert.title }}</span>
+      <span class="cert-link-text">{{ cert.link_text }}<span class="visually-hidden"> (opens in a new tab)</span></span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
